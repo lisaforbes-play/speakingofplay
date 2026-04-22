@@ -265,6 +265,31 @@
         padding: 1.35rem;
       }
     }
+    .therapy-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.therapy-gallery-item {
+  border-radius: 22px;
+  overflow: hidden;
+  background: #efe7dc;
+  border: 1px solid rgba(29, 27, 26, 0.08);
+}
+
+.therapy-gallery-item img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+@media (max-width: 900px) {
+  .therapy-gallery {
+    grid-template-columns: 1fr;
+  }
+}
   </style>
 </head>
 <body>
