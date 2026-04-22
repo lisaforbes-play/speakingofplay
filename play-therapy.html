@@ -14,17 +14,13 @@
       --paper: rgba(255, 253, 249, 0.82);
       --ink: #1d1b1a;
       --muted: #5e5853;
-      --line: rgba(29, 27, 26, 0.12);
       --accent: #8b5cf6;
       --accent-soft: rgba(139, 92, 246, 0.12);
       --shadow: 0 16px 50px rgba(0, 0, 0, 0.08);
       --max: 1180px;
     }
 
-    * {
-      box-sizing: border-box;
-    }
-
+    * { box-sizing: border-box; }
     body {
       margin: 0;
       font-family: 'Inter', system-ui, sans-serif;
@@ -36,10 +32,8 @@
       line-height: 1.65;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
 
     .container {
       width: min(var(--max), calc(100% - 2rem));
@@ -51,7 +45,7 @@
       top: 0;
       z-index: 20;
       backdrop-filter: blur(14px);
-      background: rgba(246, 241, 234, 0.82);
+      background: rgba(246, 241, 234, 0.84);
       border-bottom: 1px solid rgba(29, 27, 26, 0.08);
     }
 
@@ -63,19 +57,13 @@
       padding: 1rem 0;
     }
 
-    .brand {
-      display: flex;
-      flex-direction: column;
-      gap: 0.15rem;
-    }
-
+    .brand { display: flex; flex-direction: column; gap: 0.15rem; }
     .brand-kicker {
       font-size: 0.76rem;
       letter-spacing: 0.18em;
       text-transform: uppercase;
       color: var(--muted);
     }
-
     .brand-name {
       font-family: 'Playfair Display', serif;
       font-size: 1.4rem;
@@ -91,24 +79,16 @@
       color: var(--muted);
     }
 
-    .nav-links a:hover {
-      color: var(--accent);
-    }
+    .nav-links a:hover { color: var(--accent); }
 
-    .hero {
-      padding: 1.2rem 0 1.5rem;
-    }
+    .hero, .content-section { padding: 1.2rem 0 1.5rem; }
 
-    .hero-box,
-    .card {
+    .hero-box, .card {
       background: var(--paper);
       border: 1px solid rgba(29, 27, 26, 0.08);
       border-radius: 32px;
       box-shadow: var(--shadow);
-    }
-
-    .hero-box {
-      padding: 2rem;
+      padding: 1.7rem;
     }
 
     .eyebrow {
@@ -118,7 +98,6 @@
       padding: 0.45rem 0.85rem;
       border-radius: 999px;
       background: var(--accent-soft);
-      color: var(--ink);
       font-size: 0.82rem;
       letter-spacing: 0.08em;
       text-transform: uppercase;
@@ -157,44 +136,24 @@
       font-size: 1.04rem;
     }
 
-    .content-section {
-      padding: 0 0 1.5rem;
-    }
-
-    .two-col {
+    .two-col, .focus-grid, .therapy-gallery {
       display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
       gap: 1rem;
     }
 
-    .card {
-      padding: 1.75rem;
-    }
+    .two-col { grid-template-columns: 1.05fr 0.95fr; }
+    .focus-grid, .therapy-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 
     .list {
       display: grid;
       gap: 0.85rem;
     }
 
-    .list-item {
+    .list-item, .focus-card {
       padding: 1rem;
       border-radius: 18px;
       background: rgba(246, 241, 234, 0.92);
       border: 1px solid rgba(29, 27, 26, 0.06);
-    }
-
-    .focus-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 1rem;
-      margin-top: 1rem;
-    }
-
-    .focus-card {
-      padding: 1.2rem;
-      border-radius: 22px;
-      background: rgba(255,255,255,0.72);
-      border: 1px solid rgba(29, 27, 26, 0.08);
     }
 
     .focus-card .label {
@@ -214,6 +173,22 @@
       font-size: 1.1rem;
       color: var(--ink);
       font-weight: 500;
+    }
+
+    .therapy-gallery-item {
+      max-width: 360px;
+      width: 100%;
+      margin: 0 auto;
+      border-radius: 22px;
+      overflow: hidden;
+      background: #efe7dc;
+      border: 1px solid rgba(29, 27, 26, 0.08);
+    }
+
+    .therapy-gallery-item img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
     }
 
     .cta {
@@ -244,8 +219,7 @@
     }
 
     @media (max-width: 900px) {
-      .two-col,
-      .focus-grid {
+      .two-col, .focus-grid, .therapy-gallery {
         grid-template-columns: 1fr;
       }
     }
@@ -255,41 +229,10 @@
         flex-direction: column;
         align-items: flex-start;
       }
-
       .nav-links {
         gap: 0.85rem;
       }
-
-      .hero-box,
-      .card {
-        padding: 1.35rem;
-      }
     }
-    .therapy-gallery {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1rem;
-  margin-top: 1rem;
-}
-
-.therapy-gallery-item {
-  border-radius: 22px;
-  overflow: hidden;
-  background: #efe7dc;
-  border: 1px solid rgba(29, 27, 26, 0.08);
-}
-
-.therapy-gallery-item img {
-  width: 100%;
-  display: block;
-  object-fit: cover;
-}
-
-@media (max-width: 900px) {
-  .therapy-gallery {
-    grid-template-columns: 1fr;
-  }
-}
   </style>
 </head>
 <body>
@@ -353,20 +296,34 @@
               <div class="label">More confidence in</div>
               <div class="value">non-directive work with children</div>
             </div>
-
             <div class="focus-card">
               <div class="label">A clearer sense of</div>
               <div class="value">what to look for in play sequences</div>
             </div>
-
             <div class="focus-card">
               <div class="label">Language that</div>
               <div class="value">supports without overinterpreting</div>
             </div>
-
             <div class="focus-card">
               <div class="label">A deeper trust in</div>
               <div class="value">the pace and wisdom of the process</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <div class="container">
+        <div class="card">
+          <h2>A glimpse into the playroom</h2>
+          <p>Play therapy is alive, symbolic, surprising, and often far more expressive than words alone.</p>
+          <div class="therapy-gallery">
+            <div class="therapy-gallery-item">
+              <img src="stickers-face.jpg" alt="Lisa Forbes with playful stickers on her face" />
+            </div>
+            <div class="therapy-gallery-item">
+              <img src="sandtray.jpg" alt="Sandtray setup with miniatures and figures" />
             </div>
           </div>
         </div>
@@ -384,24 +341,6 @@
             <div class="list-item">Staying with process rather than rushing toward meaning</div>
           </div>
         </div>
-
-        <section class="content-section">
-  <div class="container">
-    <div class="card">
-      <h2>A glimpse into the playroom</h2>
-      <p>Play therapy is alive, symbolic, surprising, and often far more expressive than words alone.</p>
-
-      <div class="therapy-gallery">
-        <div class="therapy-gallery-item">
-          <img src="stickers-face.jpg" alt="Lisa Forbes with playful stickers on her face" />
-        </div>
-        <div class="therapy-gallery-item">
-          <img src="sandtray.jpg" alt="Sandtray setup with miniatures and figures" />
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
         <div class="card">
           <h2>Bring this to your training or clinical community</h2>
