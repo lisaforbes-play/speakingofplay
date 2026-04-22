@@ -14,31 +14,23 @@
       --paper: rgba(255, 253, 249, 0.82);
       --ink: #1d1b1a;
       --muted: #5e5853;
-      --line: rgba(29, 27, 26, 0.12);
       --accent: #d96c4a;
       --accent-soft: rgba(217, 108, 74, 0.12);
       --shadow: 0 16px 50px rgba(0, 0, 0, 0.08);
       --max: 1180px;
     }
 
-    * {
-      box-sizing: border-box;
-    }
-
+    * { box-sizing: border-box; }
     body {
       margin: 0;
       font-family: 'Inter', system-ui, sans-serif;
       color: var(--ink);
-      background:
-        radial-gradient(circle at top left, rgba(217, 108, 74, 0.10), transparent 30%),
-        var(--bg);
+      background: radial-gradient(circle at top left, rgba(217, 108, 74, 0.10), transparent 30%), var(--bg);
       line-height: 1.65;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
 
     .container {
       width: min(var(--max), calc(100% - 2rem));
@@ -50,7 +42,7 @@
       top: 0;
       z-index: 20;
       backdrop-filter: blur(14px);
-      background: rgba(246, 241, 234, 0.82);
+      background: rgba(246, 241, 234, 0.84);
       border-bottom: 1px solid rgba(29, 27, 26, 0.08);
     }
 
@@ -62,19 +54,13 @@
       padding: 1rem 0;
     }
 
-    .brand {
-      display: flex;
-      flex-direction: column;
-      gap: 0.15rem;
-    }
-
+    .brand { display: flex; flex-direction: column; gap: 0.15rem; }
     .brand-kicker {
       font-size: 0.76rem;
       letter-spacing: 0.18em;
       text-transform: uppercase;
       color: var(--muted);
     }
-
     .brand-name {
       font-family: 'Playfair Display', serif;
       font-size: 1.4rem;
@@ -90,24 +76,16 @@
       color: var(--muted);
     }
 
-    .nav-links a:hover {
-      color: var(--accent);
-    }
+    .nav-links a:hover { color: var(--accent); }
 
-    .hero {
-      padding: 1.2rem 0 1.5rem;
-    }
+    .hero, .content-section { padding: 1.2rem 0 1.5rem; }
 
-    .hero-box,
-    .card {
+    .hero-box, .card {
       background: var(--paper);
       border: 1px solid rgba(29, 27, 26, 0.08);
       border-radius: 32px;
       box-shadow: var(--shadow);
-    }
-
-    .hero-box {
-      padding: 2rem;
+      padding: 1.7rem;
     }
 
     .eyebrow {
@@ -117,7 +95,6 @@
       padding: 0.45rem 0.85rem;
       border-radius: 999px;
       background: var(--accent-soft);
-      color: var(--ink);
       font-size: 0.82rem;
       letter-spacing: 0.08em;
       text-transform: uppercase;
@@ -156,44 +133,45 @@
       font-size: 1.04rem;
     }
 
-    .content-section {
-      padding: 0 0 1.5rem;
-    }
-
-    .two-col {
+    .two-col, .room-grid {
       display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
       gap: 1rem;
     }
 
-    .card {
-      padding: 1.75rem;
-    }
+    .two-col { grid-template-columns: 1.05fr 0.95fr; }
+    .room-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 1rem; }
 
-    .list {
-      display: grid;
-      gap: 0.85rem;
-    }
+    .list { display: grid; gap: 0.85rem; }
 
-    .list-item {
+    .list-item, .room-card {
       padding: 1rem;
       border-radius: 18px;
       background: rgba(246, 241, 234, 0.92);
       border: 1px solid rgba(29, 27, 26, 0.06);
     }
 
-    .room-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 1rem;
-      margin-top: 1rem;
+    .feature-photo-wrap {
+      max-width: 520px;
+      margin: 0 auto;
     }
 
-    .room-card {
-      padding: 1.2rem;
+    .feature-photo {
       border-radius: 22px;
-      background: rgba(255,255,255,0.72);
-      border: 1px solid rgba(29, 27, 26, 0.08);
+      overflow: hidden;
+      background: #efe7dc;
+    }
+
+    .feature-photo img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+
+    .photo-caption {
+      margin: 0.7rem 0 0;
+      color: var(--muted);
+      font-size: 0.94rem;
+      text-align: center;
     }
 
     .room-card .from {
@@ -236,8 +214,7 @@
     }
 
     @media (max-width: 900px) {
-      .two-col,
-      .room-grid {
+      .two-col, .room-grid {
         grid-template-columns: 1fr;
       }
     }
@@ -247,14 +224,8 @@
         flex-direction: column;
         align-items: flex-start;
       }
-
       .nav-links {
         gap: 0.85rem;
-      }
-
-      .hero-box,
-      .card {
-        padding: 1.35rem;
       }
     }
   </style>
@@ -287,17 +258,19 @@
         </div>
       </div>
     </section>
-    
+
     <section class="content-section">
-  <div class="container">
-    <div class="card featured-photo-card">
-      <div class="featured-photo">
-        <img src="stuart-brown.jpg" alt="Lisa Forbes with Stuart Brown" />
+      <div class="container">
+        <div class="card">
+          <div class="feature-photo-wrap">
+            <div class="feature-photo">
+              <img src="stuart-brown.jpg" alt="Lisa Forbes with Stuart Brown" />
+            </div>
+            <p class="photo-caption">Stuart Brown.</p>
+          </div>
+        </div>
       </div>
-      <p class="photo-caption">Stuart Brown.</p>
-    </div>
-  </div>
-</section>
+    </section>
 
     <section class="content-section">
       <div class="container two-col">
@@ -325,23 +298,19 @@
         <div class="card">
           <h2>What happens in the room</h2>
           <p>People don’t just leave with ideas. They leave having experienced something different.</p>
-
           <div class="room-grid">
             <div class="room-card">
               <div class="from">From</div>
               <div class="to">Control → Curiosity</div>
             </div>
-
             <div class="room-card">
               <div class="from">From</div>
               <div class="to">Performance → Presence</div>
             </div>
-
             <div class="room-card">
               <div class="from">From</div>
               <div class="to">Rigid outcomes → Emergent learning</div>
             </div>
-
             <div class="room-card">
               <div class="from">From</div>
               <div class="to">Managing behavior → Understanding meaning</div>
@@ -380,25 +349,3 @@
   </footer>
 </body>
 </html>
-
-.featured-photo-card {
-  padding: 1.25rem;
-}
-
-.featured-photo {
-  border-radius: 22px;
-  overflow: hidden;
-  background: #efe7dc;
-}
-
-.featured-photo img {
-  width: 100%;
-  display: block;
-  object-fit: cover;
-}
-
-.photo-caption {
-  margin: 0.85rem 0 0;
-  color: var(--muted);
-  font-size: 0.95rem;
-}
