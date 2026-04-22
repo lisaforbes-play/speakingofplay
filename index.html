@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lisa Forbes | Speaking of Play</title>
-  <meta name="description" content="Lisa Forbes speaks on playful pedagogy, higher education, and play therapy." />
+  <meta name="description" content="Lisa Forbes speaks on playful pedagogy, higher education, play therapy, and the power of play in learning, healing, and human development." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -15,9 +15,10 @@
       --ink: #1d1b1a;
       --muted: #5e5853;
       --line: rgba(29, 27, 26, 0.12);
-      --accent: #d96c4a;
-      --accent-2: #8b5cf6;
-      --accent-soft: rgba(217, 108, 74, 0.12);
+      --accent-coral: #d96c4a;
+      --accent-lavender: #8b5cf6;
+      --accent-coral-soft: rgba(217, 108, 74, 0.12);
+      --accent-lavender-soft: rgba(139, 92, 246, 0.12);
       --shadow: 0 16px 50px rgba(0, 0, 0, 0.08);
       --max: 1180px;
     }
@@ -98,7 +99,7 @@
 
     .nav-links a:hover,
     .about-copy a:hover {
-      color: var(--accent);
+      color: var(--accent-coral);
     }
 
     .button {
@@ -106,26 +107,28 @@
       align-items: center;
       justify-content: center;
       gap: 0.5rem;
-      padding: 0.95rem 1.25rem;
+      padding: 0.95rem 1.35rem;
       border-radius: 999px;
       border: 1px solid transparent;
       font-weight: 600;
-      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+      text-align: center;
     }
 
     .button:hover {
       transform: translateY(-1px);
     }
 
-    .button-primary {
-      background: var(--ink);
+    .button-coral {
+      background: var(--accent-coral);
       color: white;
       box-shadow: var(--shadow);
     }
 
-    .button-secondary {
-      border-color: var(--line);
-      background: rgba(255,255,255,0.65);
+    .button-lavender {
+      background: var(--accent-lavender);
+      color: white;
+      box-shadow: var(--shadow);
     }
 
     .hero {
@@ -157,7 +160,7 @@
       gap: 0.55rem;
       padding: 0.45rem 0.85rem;
       border-radius: 999px;
-      background: var(--accent-soft);
+      background: var(--accent-coral-soft);
       color: var(--ink);
       font-size: 0.82rem;
       letter-spacing: 0.08em;
@@ -170,7 +173,7 @@
       width: 0.55rem;
       height: 0.55rem;
       border-radius: 999px;
-      background: var(--accent);
+      background: var(--accent-coral);
       display: block;
     }
 
@@ -181,7 +184,7 @@
 
     h1 {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(2.6rem, 5.2vw, 4.7rem);
+      font-size: clamp(2.45rem, 4.8vw, 4.45rem);
       letter-spacing: -0.04em;
       margin-bottom: 1rem;
     }
@@ -198,6 +201,7 @@
       flex-wrap: wrap;
       gap: 0.85rem;
       margin-top: 1.6rem;
+      justify-content: center;
     }
 
     .hero-card {
@@ -209,33 +213,34 @@
 
     .comparison-card h2 {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(2.2rem, 4vw, 3.8rem);
+      font-size: clamp(2rem, 3.7vw, 3.5rem);
       letter-spacing: -0.04em;
       margin-bottom: 1rem;
     }
 
-    .comparison-card p {
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.15rem;
+    }
+
+    .comparison-blurb p {
       color: var(--muted);
-      margin: 0 0 1.2rem;
+      margin: 0;
       font-size: 1.02rem;
     }
 
-    .comparison-block {
-      padding-bottom: 1rem;
-      margin-bottom: 1.1rem;
-      border-bottom: 1px solid rgba(217, 108, 74, 0.25);
-    }
-
-    .comparison-block:last-of-type {
-      border-bottom: none;
-      margin-bottom: 0.7rem;
-      padding-bottom: 0;
+    .comparison-divider {
+      height: 1px;
+      background: rgba(217, 108, 74, 0.25);
+      margin: 0.2rem 0 1rem;
     }
 
     .comparison-end {
       font-weight: 500;
       color: var(--ink);
-      margin-top: 0.35rem;
+      margin: 0;
     }
 
     section {
@@ -285,11 +290,11 @@
       height: 180px;
       border-radius: 999px;
       opacity: 0.12;
-      background: var(--accent);
+      background: var(--accent-coral);
     }
 
     .path-card.secondary::after {
-      background: var(--accent-2);
+      background: var(--accent-lavender);
     }
 
     .path-kicker {
@@ -348,16 +353,15 @@
     .portrait {
       aspect-ratio: 4 / 5;
       border-radius: 22px;
-      background:
-        linear-gradient(135deg, rgba(217, 108, 74, 0.22), rgba(139, 92, 246, 0.18)),
-        #efe7dc;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 1.5rem;
-      color: var(--muted);
-      font-size: 0.95rem;
+      overflow: hidden;
+      background: #efe7dc;
+    }
+
+    .portrait img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
 
     .about-copy p {
@@ -366,20 +370,32 @@
       margin: 0 0 1.2rem;
     }
 
+    .work-intro {
+      color: var(--muted);
+      font-size: 1rem;
+      margin-top: 0.25rem;
+      margin-bottom: 1.2rem;
+    }
+
     .publication-list {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 0.85rem;
-      margin-top: 1.35rem;
+      margin-top: 1.1rem;
     }
 
     .publication-card {
-      display: block;
-      padding: 1rem 1rem 1.05rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      min-height: 108px;
+      padding: 1rem;
       border-radius: 18px;
       background: rgba(246, 241, 234, 0.9);
       border: 1px solid rgba(29, 27, 26, 0.06);
-      font-size: 0.98rem;
+      font-size: 0.96rem;
+      line-height: 1.35;
       transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
     }
 
@@ -437,7 +453,8 @@
       .hero-grid,
       .pathways,
       .about-grid,
-      .publication-list {
+      .publication-list,
+      .comparison-grid {
         grid-template-columns: 1fr;
       }
 
@@ -461,13 +478,23 @@
       }
 
       h1 {
-        font-size: clamp(2.3rem, 12vw, 3.9rem);
+        font-size: clamp(2.15rem, 11vw, 3.7rem);
       }
 
       .section-intro h2,
       .cta-box h2,
       .comparison-card h2 {
         font-size: clamp(1.8rem, 9vw, 2.8rem);
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .button {
+        width: 100%;
+        max-width: 320px;
       }
     }
   </style>
@@ -483,6 +510,7 @@
         <a href="index.html">Home</a>
         <a href="pedagogy.html">For Colleges & Organizations</a>
         <a href="play-therapy.html">For Therapists</a>
+        <a href="previous-work.html">Previous Work</a>
         <a href="mailto:lisakosena@gmail.com">Contact</a>
       </nav>
     </div>
@@ -494,25 +522,28 @@
         <div class="hero-copy">
           <span class="eyebrow">Playful pedagogy + play therapy</span>
           <h1>Play changes everything. We just forgot how to let it.</h1>
-          <p>Most systems we work in were built for control, efficiency, and predictability. Somewhere along the way, curiosity, connection, and humanity got squeezed out.</p>
-          <p>Play isn’t extra. It isn’t just an icebreaker or a strategy. It’s what brings people back online.</p>
+          <p>Whether we are trying to help people learn, grow, or heal, play changes the quality of the room. It opens space for curiosity, expression, connection, and movement.</p>
+          <p>Sometimes that looks like rehumanizing a classroom. Sometimes it looks like understanding a child’s story in the playroom. Different spaces, different purposes, same deep respect for what becomes possible when play is allowed back in.</p>
+
           <div class="hero-actions">
-            <a class="button button-primary" href="pedagogy.html">For Colleges & Organizations</a>
-            <a class="button button-secondary" href="play-therapy.html">For Therapists</a>
+            <a class="button button-coral" href="pedagogy.html">For Colleges & Organizations</a>
+            <a class="button button-lavender" href="play-therapy.html">For Therapists</a>
           </div>
         </div>
 
         <aside class="hero-card comparison-card">
           <h2>Same word. Different work.</h2>
 
-          <div class="comparison-block">
-            <p>In educational settings, I focus on how play rehumanizes learning and invites curiosity, risk-taking, and connection back into the room.</p>
+          <div class="comparison-grid">
+            <div class="comparison-blurb">
+              <p>In educational settings, I focus on how play rehumanizes learning and invites curiosity, risk-taking, and connection back into the room.</p>
+            </div>
+            <div class="comparison-blurb">
+              <p>In clinical settings, I focus on play as the primary language through which children express, process, and make sense of their internal worlds.</p>
+            </div>
           </div>
 
-          <div class="comparison-block">
-            <p>In clinical settings, I focus on play as the primary language through which children express, process, and make sense of their internal worlds.</p>
-          </div>
-
+          <div class="comparison-divider"></div>
           <p class="comparison-end">The throughline is play. The application is distinct.</p>
         </aside>
       </div>
@@ -550,7 +581,9 @@
     <section>
       <div class="container about-grid">
         <div class="about-card">
-          <div class="portrait">Add a speaking photo of yourself here later. For now, this can stay as a placeholder.</div>
+          <div class="portrait">
+            <img src="lisa-forbes.jpg" alt="Portrait of Lisa Forbes" />
+          </div>
         </div>
 
         <div class="about-copy">
@@ -571,6 +604,10 @@
             Her work lives at the intersection of teaching, therapy, and human development, bringing a rare blend of research, lived experience, and embodied practice into every space she enters.
           </p>
 
+          <p class="work-intro">
+            Want to poke around a little? Here are a few books, articles, and projects that give a fuller feel for her work.
+          </p>
+
           <div class="publication-list">
             <a class="publication-card" href="https://playstorypress.org/books/professors-at-play-playbook/" target="_blank" rel="noopener noreferrer">Professors at Play PlayBook</a>
 
@@ -580,11 +617,13 @@
 
             <a class="publication-card" href="https://www.amazon.com/Only-Kids-Play-Save-World/dp/131210726X" target="_blank" rel="noopener noreferrer">Only Kids and Play Can Save the World</a>
 
-            <a class="publication-card" href="https://www.insidehighered.com/news/faculty-issues/teaching/2023/12/13/nonconformists-embrace-play-tool-teaching-learning" target="_blank" rel="noopener noreferrer">Inside Higher Ed Article</a>
+            <a class="publication-card" href="https://youtu.be/6wkQKCO_5-0?feature=shared" target="_blank" rel="noopener noreferrer">Therapist Confidential Podcast with Travis Heath</a>
 
             <a class="publication-card" href="https://jtl.uwindsor.ca/index.php/jtl/article/view/6515/5264" target="_blank" rel="noopener noreferrer">The Process of Play in Learning in Higher Education</a>
 
             <a class="publication-card" href="https://www.journalofplayinadulthood.org.uk/article/id/1326/" target="_blank" rel="noopener noreferrer">15 Play Experts' Vision for a More Playful Future</a>
+
+            <a class="publication-card" href="https://www.facultyfocus.com/author/ff-lisaforbes/" target="_blank" rel="noopener noreferrer">Articles on Playful Online Learning</a>
           </div>
         </div>
       </div>
@@ -597,7 +636,7 @@
             <h2>Bring this work to your campus, conference, or training.</h2>
             <p>If you’re looking for a keynote, workshop, or clinical training that feels thoughtful, alive, and deeply human, let’s talk.</p>
           </div>
-          <a class="button button-primary" href="mailto:lisakosena@gmail.com">Start a conversation</a>
+          <a class="button button-coral" href="mailto:lisakosena@gmail.com">Start a conversation</a>
         </div>
       </div>
     </section>
