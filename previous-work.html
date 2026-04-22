@@ -22,9 +22,7 @@
       --max: 1180px;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
@@ -37,10 +35,8 @@
       line-height: 1.65;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
 
     .container {
       width: min(var(--max), calc(100% - 2rem));
@@ -52,7 +48,7 @@
       top: 0;
       z-index: 20;
       backdrop-filter: blur(14px);
-      background: rgba(246, 241, 234, 0.82);
+      background: rgba(246, 241, 234, 0.84);
       border-bottom: 1px solid rgba(29, 27, 26, 0.08);
     }
 
@@ -64,19 +60,13 @@
       padding: 1rem 0;
     }
 
-    .brand {
-      display: flex;
-      flex-direction: column;
-      gap: 0.15rem;
-    }
-
+    .brand { display: flex; flex-direction: column; gap: 0.15rem; }
     .brand-kicker {
       font-size: 0.76rem;
       letter-spacing: 0.18em;
       text-transform: uppercase;
       color: var(--muted);
     }
-
     .brand-name {
       font-family: 'Playfair Display', serif;
       font-size: 1.4rem;
@@ -92,20 +82,16 @@
       color: var(--muted);
     }
 
-    .nav-links a:hover {
-      color: var(--accent-coral);
-    }
+    .nav-links a:hover { color: var(--accent-coral); }
 
-    .hero {
-      padding: 1.2rem 0 1.5rem;
-    }
+    .hero, .content-section { padding: 1.2rem 0 1.5rem; }
 
-    .hero-box {
+    .hero-box, .section-card {
       background: var(--paper);
       border: 1px solid rgba(29, 27, 26, 0.08);
       border-radius: 32px;
       box-shadow: var(--shadow);
-      padding: 2rem;
+      padding: 1.7rem;
     }
 
     .eyebrow {
@@ -115,7 +101,6 @@
       padding: 0.45rem 0.85rem;
       border-radius: 999px;
       background: var(--accent-coral-soft);
-      color: var(--ink);
       font-size: 0.82rem;
       letter-spacing: 0.08em;
       text-transform: uppercase;
@@ -155,18 +140,6 @@
       max-width: 54rem;
     }
 
-    .content-section {
-      padding: 0 0 1.5rem;
-    }
-
-    .section-card {
-      background: var(--paper);
-      border: 1px solid rgba(29, 27, 26, 0.08);
-      border-radius: 30px;
-      box-shadow: var(--shadow);
-      padding: 2rem;
-    }
-
     .section-card + .section-card {
       margin-top: 1.25rem;
     }
@@ -202,6 +175,23 @@
     .pill.upcoming {
       background: var(--accent-lavender-soft);
       color: var(--ink);
+    }
+
+    .feature-photo-wrap {
+      max-width: 420px;
+      margin: 0 auto;
+    }
+
+    .feature-photo {
+      border-radius: 22px;
+      overflow: hidden;
+      background: #efe7dc;
+    }
+
+    .feature-photo img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
     }
 
     .media-grid {
@@ -258,17 +248,6 @@
       color: var(--muted);
     }
 
-    .entry-org a,
-    .media-card .entry-org a {
-      color: var(--accent-coral);
-      word-break: break-word;
-    }
-
-    .entry-org a:hover,
-    .media-card .entry-org a:hover {
-      text-decoration: underline;
-    }
-
     .footer {
       padding: 2rem 0 3rem;
       color: var(--muted);
@@ -295,32 +274,10 @@
         flex-direction: column;
         align-items: flex-start;
       }
-
       .nav-links {
         gap: 0.85rem;
       }
-
-      .hero-box,
-      .section-card {
-        padding: 1.35rem;
-      }
     }
-
-    .image-feature-card {
-  padding: 1.25rem;
-}
-
-.image-feature {
-  border-radius: 22px;
-  overflow: hidden;
-  background: #efe7dc;
-}
-
-.image-feature img {
-  width: 100%;
-  display: block;
-  object-fit: cover;
-}
   </style>
 </head>
 <body>
@@ -352,17 +309,14 @@
     </section>
 
     <section class="content-section">
-  <div class="container">
-    <div class="section-card image-feature-card">
-      <div class="image-feature">
-        <img src="gary-stuart.jpg" alt="Lisa Forbes at Playposium 2024" />
-      </div>
-    </div>
-  </div>
-</section>
-
-    <section class="content-section">
       <div class="container">
+        <div class="section-card">
+          <div class="feature-photo-wrap">
+            <div class="feature-photo">
+              <img src="gary-stuart.jpg" alt="Lisa Forbes at Playposium 2024" />
+            </div>
+          </div>
+        </div>
 
         <div class="section-card">
           <div class="section-top">
@@ -411,59 +365,15 @@
           </div>
 
           <div class="entry-list">
-            <div class="entry">
-              <div class="entry-date">March 2026</div>
-              <div class="entry-title">The Power of Play in Learning: Inviting Belonging, Engagement, and Transformative Learning</div>
-              <div class="entry-org">Annual PACE Teaching & Learning Conference, Pellissippi State Community College, Knoxville, TN.</div>
-            </div>
-
-            <div class="entry">
-              <div class="entry-date">February 2026</div>
-              <div class="entry-title">The Classroom as a Living System: Teaching with Play at the Center</div>
-              <div class="entry-org">The 2026 Excellence in Teaching and Learning Summit, The College of New Jersey, Ewing, NJ.</div>
-            </div>
-
-            <div class="entry">
-              <div class="entry-date">April 2025</div>
-              <div class="entry-title">Carving Your Own Path</div>
-              <div class="entry-org">Chi Sigma Iota Beta Alpha Omega New Member Initiation, CU Denver.</div>
-            </div>
-
-            <div class="entry">
-              <div class="entry-date">February 2025</div>
-              <div class="entry-title">The Power of Playful Pedagogy: Igniting Belonging, Engagement, and Learning</div>
-              <div class="entry-org">University Forum 2025, Southern Connecticut State University, New Haven, CT.</div>
-            </div>
-
-            <div class="entry">
-              <div class="entry-date">April 2024</div>
-              <div class="entry-title">Resisting Soul Deconstruction through Rebellion and Play</div>
-              <div class="entry-org">University of Northern Colorado Chi Sigma Iota Rho Epsilon New Member Initiation, Greeley, CO.</div>
-            </div>
-
-            <div class="entry">
-              <div class="entry-date">February 2024</div>
-              <div class="entry-title">Playful Pedagogy: Igniting Belonging and Engagement</div>
-              <div class="entry-org">The Playposium at the University of Nebraska Lincoln, Lincoln, NE.</div>
-            </div>
-
-            <div class="entry">
-              <div class="entry-date">January 2024</div>
-              <div class="entry-title">Playful Pedagogy in Higher Education</div>
-              <div class="entry-org">Spring Symposium at the University of the District of Columbia, Washington, DC.</div>
-            </div>
-
-            <div class="entry">
-              <div class="entry-date">April 2023</div>
-              <div class="entry-title">The Power of Playful Pedagogy: Igniting Belonging, Engagement, and Connection</div>
-              <div class="entry-org">Center for Educational Excellence Evidence-Based Teaching Conference Series, Palo Alto University.</div>
-            </div>
-
-            <div class="entry">
-              <div class="entry-date">May 2022</div>
-              <div class="entry-title">Playful Online Learning: Engagement, Joy, and Connection</div>
-              <div class="entry-org">Counselor Education Distance Learning Conference, Virtual.</div>
-            </div>
+            <div class="entry"><div class="entry-date">March 2026</div><div class="entry-title">The Power of Play in Learning: Inviting Belonging, Engagement, and Transformative Learning</div><div class="entry-org">Annual PACE Teaching & Learning Conference, Pellissippi State Community College, Knoxville, TN.</div></div>
+            <div class="entry"><div class="entry-date">February 2026</div><div class="entry-title">The Classroom as a Living System: Teaching with Play at the Center</div><div class="entry-org">The 2026 Excellence in Teaching and Learning Summit, The College of New Jersey, Ewing, NJ.</div></div>
+            <div class="entry"><div class="entry-date">April 2025</div><div class="entry-title">Carving Your Own Path</div><div class="entry-org">Chi Sigma Iota Beta Alpha Omega New Member Initiation, CU Denver.</div></div>
+            <div class="entry"><div class="entry-date">February 2025</div><div class="entry-title">The Power of Playful Pedagogy: Igniting Belonging, Engagement, and Learning</div><div class="entry-org">University Forum 2025, Southern Connecticut State University, New Haven, CT.</div></div>
+            <div class="entry"><div class="entry-date">April 2024</div><div class="entry-title">Resisting Soul Deconstruction through Rebellion and Play</div><div class="entry-org">University of Northern Colorado Chi Sigma Iota Rho Epsilon New Member Initiation, Greeley, CO.</div></div>
+            <div class="entry"><div class="entry-date">February 2024</div><div class="entry-title">Playful Pedagogy: Igniting Belonging and Engagement</div><div class="entry-org">The Playposium at the University of Nebraska Lincoln, Lincoln, NE.</div></div>
+            <div class="entry"><div class="entry-date">January 2024</div><div class="entry-title">Playful Pedagogy in Higher Education</div><div class="entry-org">Spring Symposium at the University of the District of Columbia, Washington, DC.</div></div>
+            <div class="entry"><div class="entry-date">April 2023</div><div class="entry-title">The Power of Playful Pedagogy: Igniting Belonging, Engagement, and Connection</div><div class="entry-org">Center for Educational Excellence Evidence-Based Teaching Conference Series, Palo Alto University.</div></div>
+            <div class="entry"><div class="entry-date">May 2022</div><div class="entry-title">Playful Online Learning: Engagement, Joy, and Connection</div><div class="entry-org">Counselor Education Distance Learning Conference, Virtual.</div></div>
           </div>
         </div>
 
@@ -482,142 +392,30 @@
               <div class="entry-date">October 2026</div>
               <div class="entry-title">Narrative Child-Centered Play Therapy: Expanding Possibility Through Story and Play</div>
               <div class="entry-org">The Association for Play Therapy National Conference, Minneapolis, MN.</div>
-              <div class="pill-row" style="margin-top:0.8rem;">
-                <span class="pill upcoming">Upcoming</span>
-              </div>
+              <div class="pill-row" style="margin-top:0.8rem;"><span class="pill upcoming">Upcoming</span></div>
             </div>
-
-            <div class="entry">
-              <div class="entry-date">April 2026</div>
-              <div class="entry-title">Narrative Child-Centered Play Therapy</div>
-              <div class="entry-org">The Colorado Association for Play Therapy Spring Conference, Westminster, CO.</div>
-            </div>
-
-            <div class="entry">
-              <div class="entry-date">March 2026</div>
-              <div class="entry-title">Bringing Play and Developmental Science Back Into the Classroom</div>
-              <div class="entry-org">Webinar, The Society for Research in Child Development, Virtual.</div>
-            </div>
-
-            <div class="entry">
-              <div class="entry-date">February 2026</div>
-              <div class="entry-title">The “Pitch It” Game: Designing Playful Interventions</div>
-              <div class="entry-org">Workshop, The 2026 Excellence in Teaching and Learning Summit, The College of New Jersey, Ewing, NJ.</div>
-            </div>
-
-            <div class="entry">
-              <div class="entry-date">January 2026</div>
-              <div class="entry-title">Trauma-Informed and Play-Centered Teaching for Dance Educators</div>
-              <div class="entry-org">PD Training, The Colorado Ballet, Denver, CO.</div>
-            </div>
-
-            <div class="entry">
-              <div class="entry-date">November 2024</div>
-              <div class="entry-title">Play Therapy-Informed Skateboard Lessons</div>
-              <div class="entry-org">Webinar, Oklahoma Association for Play Therapy Continuing Education, Virtual.</div>
-            </div>
-
-            <div class="entry">
-              <div class="entry-date">November 2024</div>
-              <div class="entry-title">Simplifying Play Therapy for Supervisors</div>
-              <div class="entry-org">PD Training, CU Denver Counseling Program and Student and Community Counseling Center, Virtual.</div>
-            </div>
-
-            <div class="entry">
-              <div class="entry-date">June 2023</div>
-              <div class="entry-title">An Unlikely Ally: Harnessing the Power of Play at Work</div>
-              <div class="entry-org">Pre-Conference Workshop, Educause Learning Initiative, Anaheim, CA.</div>
-            </div>
-
-            <div class="entry">
-              <div class="entry-date">April 2023</div>
-              <div class="entry-title">Faculty Playground Session</div>
-              <div class="entry-org">Session 6 of 6 in Playful Pedagogy: Reviving Teaching Through Play, Center for Excellence in Teaching and Learning at CU Denver.</div>
-            </div>
-
-            <div class="entry">
-              <div class="entry-date">March 2023</div>
-              <div class="entry-title">Protecting Time and Enhancing Well-Being</div>
-              <div class="entry-org">Session 5 of 6 in Playful Pedagogy: Reviving Teaching Through Play, Center for Excellence in Teaching and Learning at CU Denver.</div>
-            </div>
-
-            <div class="entry">
-              <div class="entry-date">February 2023</div>
-              <div class="entry-title">Harnessing Play for Efficacy & Student Engagement</div>
-              <div class="entry-org">Session 4 of 6 in Playful Pedagogy: Reviving Teaching Through Play, Center for Excellence in Teaching and Learning at CU Denver.</div>
-            </div>
-
-            <div class="entry">
-              <div class="entry-date">January 2023</div>
-              <div class="entry-title">Playful Rebellion: Not Taking Ourselves Too Seriously as Adults and Academics</div>
-              <div class="entry-org">Workshop, ThinqStudio Presentation.</div>
-            </div>
-
-            <div class="entry">
-              <div class="entry-date">November 2022</div>
-              <div class="entry-title">Faculty Playground Session</div>
-              <div class="entry-org">Session 3 of 6 in Playful Pedagogy: Reviving Teaching Through Play, Center for Excellence in Teaching and Learning at CU Denver.</div>
-            </div>
-
-            <div class="entry">
-              <div class="entry-date">October 2022</div>
-              <div class="entry-title">Overcoming Barriers That Restrict Our Playfulness</div>
-              <div class="entry-org">Session 2 of 6 in Playful Pedagogy: Reviving Teaching Through Play, Center for Excellence in Teaching and Learning at CU Denver.</div>
-            </div>
-
-            <div class="entry">
-              <div class="entry-date">October 2022</div>
-              <div class="entry-title">Playful Pedagogy: The Power of Play in Higher Education</div>
-              <div class="entry-org">Webinar, HDFS Speaker Series, Colorado State University.</div>
-            </div>
-
-            <div class="entry">
-              <div class="entry-date">September 2022</div>
-              <div class="entry-title">Re-Centering a Belief in the Power of Play</div>
-              <div class="entry-org">Session 1 of 6 in Playful Pedagogy: Reviving Teaching Through Play, Center for Excellence in Teaching and Learning at CU Denver.</div>
-            </div>
-
-            <div class="entry">
-              <div class="entry-date">August 2022</div>
-              <div class="entry-title">Play Therapy and Creativity with Adult Clients in Psychotherapy</div>
-              <div class="entry-org">Invited Workshop Talk, The CU Denver Counseling Center.</div>
-            </div>
-
-            <div class="entry">
-              <div class="entry-date">February 2022</div>
-              <div class="entry-title">Designing a Playful Classroom and Increasing Student Learning</div>
-              <div class="entry-org">Lunch and Learn, Center for Excellence in Teaching and Learning at CU Denver.</div>
-            </div>
-
-            <div class="entry">
-              <div class="entry-date">2021</div>
-              <div class="entry-title">Play in Teaching and Learning</div>
-              <div class="entry-org">Invited Talk, New Faculty Orientation, CU Denver.</div>
-            </div>
-
-            <div class="entry">
-              <div class="entry-date">2021</div>
-              <div class="entry-title">Re-Envisioning Academia with Playful Minds and Joyful Hearts</div>
-              <div class="entry-org">Invited ThinqStudio Talk, CU Denver.</div>
-            </div>
-
-            <div class="entry">
-              <div class="entry-date">2020</div>
-              <div class="entry-title">Play Therapy</div>
-              <div class="entry-org">Student and Community Counseling Center, CU Denver, Master’s Level Practicum Guest Seminar.</div>
-            </div>
-
-            <div class="entry">
-              <div class="entry-date">2020</div>
-              <div class="entry-title">Fostering Classroom Discussions in Zoom with Play</div>
-              <div class="entry-org">Center for Excellence in Teaching and Learning Community of Practice, CU Denver.</div>
-            </div>
-
-            <div class="entry">
-              <div class="entry-date">2020</div>
-              <div class="entry-title">Filial Therapy at Home</div>
-              <div class="entry-org">Mile High Early Learning Preschool, Denver, CO.</div>
-            </div>
+            <div class="entry"><div class="entry-date">April 2026</div><div class="entry-title">Narrative Child-Centered Play Therapy</div><div class="entry-org">The Colorado Association for Play Therapy Spring Conference, Westminster, CO.</div></div>
+            <div class="entry"><div class="entry-date">March 2026</div><div class="entry-title">Bringing Play and Developmental Science Back Into the Classroom</div><div class="entry-org">Webinar, The Society for Research in Child Development, Virtual.</div></div>
+            <div class="entry"><div class="entry-date">February 2026</div><div class="entry-title">The “Pitch It” Game: Designing Playful Interventions</div><div class="entry-org">Workshop, The 2026 Excellence in Teaching and Learning Summit, The College of New Jersey, Ewing, NJ.</div></div>
+            <div class="entry"><div class="entry-date">January 2026</div><div class="entry-title">Trauma-Informed and Play-Centered Teaching for Dance Educators</div><div class="entry-org">PD Training, The Colorado Ballet, Denver, CO.</div></div>
+            <div class="entry"><div class="entry-date">November 2024</div><div class="entry-title">Play Therapy-Informed Skateboard Lessons</div><div class="entry-org">Webinar, Oklahoma Association for Play Therapy Continuing Education, Virtual.</div></div>
+            <div class="entry"><div class="entry-date">November 2024</div><div class="entry-title">Simplifying Play Therapy for Supervisors</div><div class="entry-org">PD Training, CU Denver Counseling Program and Student and Community Counseling Center, Virtual.</div></div>
+            <div class="entry"><div class="entry-date">June 2023</div><div class="entry-title">An Unlikely Ally: Harnessing the Power of Play at Work</div><div class="entry-org">Pre-Conference Workshop, Educause Learning Initiative, Anaheim, CA.</div></div>
+            <div class="entry"><div class="entry-date">April 2023</div><div class="entry-title">Faculty Playground Session</div><div class="entry-org">Session 6 of 6 in Playful Pedagogy: Reviving Teaching Through Play, Center for Excellence in Teaching and Learning at CU Denver.</div></div>
+            <div class="entry"><div class="entry-date">March 2023</div><div class="entry-title">Protecting Time and Enhancing Well-Being</div><div class="entry-org">Session 5 of 6 in Playful Pedagogy: Reviving Teaching Through Play, Center for Excellence in Teaching and Learning at CU Denver.</div></div>
+            <div class="entry"><div class="entry-date">February 2023</div><div class="entry-title">Harnessing Play for Efficacy & Student Engagement</div><div class="entry-org">Session 4 of 6 in Playful Pedagogy: Reviving Teaching Through Play, Center for Excellence in Teaching and Learning at CU Denver.</div></div>
+            <div class="entry"><div class="entry-date">January 2023</div><div class="entry-title">Playful Rebellion: Not Taking Ourselves Too Seriously as Adults and Academics</div><div class="entry-org">Workshop, ThinqStudio Presentation.</div></div>
+            <div class="entry"><div class="entry-date">November 2022</div><div class="entry-title">Faculty Playground Session</div><div class="entry-org">Session 3 of 6 in Playful Pedagogy: Reviving Teaching Through Play, Center for Excellence in Teaching and Learning at CU Denver.</div></div>
+            <div class="entry"><div class="entry-date">October 2022</div><div class="entry-title">Overcoming Barriers That Restrict Our Playfulness</div><div class="entry-org">Session 2 of 6 in Playful Pedagogy: Reviving Teaching Through Play, Center for Excellence in Teaching and Learning at CU Denver.</div></div>
+            <div class="entry"><div class="entry-date">October 2022</div><div class="entry-title">Playful Pedagogy: The Power of Play in Higher Education</div><div class="entry-org">Webinar, HDFS Speaker Series, Colorado State University.</div></div>
+            <div class="entry"><div class="entry-date">September 2022</div><div class="entry-title">Re-Centering a Belief in the Power of Play</div><div class="entry-org">Session 1 of 6 in Playful Pedagogy: Reviving Teaching Through Play, Center for Excellence in Teaching and Learning at CU Denver.</div></div>
+            <div class="entry"><div class="entry-date">August 2022</div><div class="entry-title">Play Therapy and Creativity with Adult Clients in Psychotherapy</div><div class="entry-org">Invited Workshop Talk, The CU Denver Counseling Center.</div></div>
+            <div class="entry"><div class="entry-date">February 2022</div><div class="entry-title">Designing a Playful Classroom and Increasing Student Learning</div><div class="entry-org">Lunch and Learn, Center for Excellence in Teaching and Learning at CU Denver.</div></div>
+            <div class="entry"><div class="entry-date">2021</div><div class="entry-title">Play in Teaching and Learning</div><div class="entry-org">Invited Talk, New Faculty Orientation, CU Denver.</div></div>
+            <div class="entry"><div class="entry-date">2021</div><div class="entry-title">Re-Envisioning Academia with Playful Minds and Joyful Hearts</div><div class="entry-org">Invited ThinqStudio Talk, CU Denver.</div></div>
+            <div class="entry"><div class="entry-date">2020</div><div class="entry-title">Play Therapy</div><div class="entry-org">Student and Community Counseling Center, CU Denver, Master’s Level Practicum Guest Seminar.</div></div>
+            <div class="entry"><div class="entry-date">2020</div><div class="entry-title">Fostering Classroom Discussions in Zoom with Play</div><div class="entry-org">Center for Excellence in Teaching and Learning Community of Practice, CU Denver.</div></div>
+            <div class="entry"><div class="entry-date">2020</div><div class="entry-title">Filial Therapy at Home</div><div class="entry-org">Mile High Early Learning Preschool, Denver, CO.</div></div>
           </div>
         </div>
 
@@ -631,47 +429,13 @@
           </div>
 
           <div class="entry-list">
-            <div class="entry">
-              <div class="entry-date">June 2025</div>
-              <div class="entry-title">Play as Resistance and Subversion</div>
-              <div class="entry-org">Conference Presentation, Playposium 2025, Kennedy Mountain Campus, Red Feather Lakes, CO.</div>
-            </div>
-
-            <div class="entry">
-              <div class="entry-date">October 2024</div>
-              <div class="entry-title">Playful Pedagogy: Igniting Inclusion, Belonging, and Engagement</div>
-              <div class="entry-org">Western Association for Counselor Education and Supervision Conference, Tucson, AZ.</div>
-            </div>
-
-            <div class="entry">
-              <div class="entry-date">February 2024</div>
-              <div class="entry-title">Playful Spirits of Practice: Playful Pedagogy</div>
-              <div class="entry-org">Conference Presentation, The Playposium, Los Angeles, CA.</div>
-            </div>
-
-            <div class="entry">
-              <div class="entry-date">October 2023</div>
-              <div class="entry-title">Playful Pedagogy: Igniting Belonging, Engagement, and Learning</div>
-              <div class="entry-org">Counselor Education and Supervision National Conference, Denver, CO.</div>
-            </div>
-
-            <div class="entry">
-              <div class="entry-date">November 2022</div>
-              <div class="entry-title">Playful Pedagogy: Harnessing the Power of Play to Better Prepare Future Counselors</div>
-              <div class="entry-org">Rocky Mountain Association for Counselor Education and Supervision Regional Conference, Coeur d’Alene, ID.</div>
-            </div>
-
-            <div class="entry">
-              <div class="entry-date">2021</div>
-              <div class="entry-title">The Future Is FUN: The Transformational Power of Play</div>
-              <div class="entry-org">ShapingEDU Winter Games, Arizona State University, Virtual.</div>
-            </div>
-
-            <div class="entry">
-              <div class="entry-date">2020</div>
-              <div class="entry-title">Wanna Play? Incorporating Playful Pedagogy in Counselor Education</div>
-              <div class="entry-org">Rocky Mountain Association for Counselor Education and Supervision Regional Conference, Virtual.</div>
-            </div>
+            <div class="entry"><div class="entry-date">June 2025</div><div class="entry-title">Play as Resistance and Subversion</div><div class="entry-org">Conference Presentation, Playposium 2025, Kennedy Mountain Campus, Red Feather Lakes, CO.</div></div>
+            <div class="entry"><div class="entry-date">October 2024</div><div class="entry-title">Playful Pedagogy: Igniting Inclusion, Belonging, and Engagement</div><div class="entry-org">Western Association for Counselor Education and Supervision Conference, Tucson, AZ.</div></div>
+            <div class="entry"><div class="entry-date">February 2024</div><div class="entry-title">Playful Spirits of Practice: Playful Pedagogy</div><div class="entry-org">Conference Presentation, The Playposium, Los Angeles, CA.</div></div>
+            <div class="entry"><div class="entry-date">October 2023</div><div class="entry-title">Playful Pedagogy: Igniting Belonging, Engagement, and Learning</div><div class="entry-org">Counselor Education and Supervision National Conference, Denver, CO.</div></div>
+            <div class="entry"><div class="entry-date">November 2022</div><div class="entry-title">Playful Pedagogy: Harnessing the Power of Play to Better Prepare Future Counselors</div><div class="entry-org">Rocky Mountain Association for Counselor Education and Supervision Regional Conference, Coeur d’Alene, ID.</div></div>
+            <div class="entry"><div class="entry-date">2021</div><div class="entry-title">The Future Is FUN: The Transformational Power of Play</div><div class="entry-org">ShapingEDU Winter Games, Arizona State University, Virtual.</div></div>
+            <div class="entry"><div class="entry-date">2020</div><div class="entry-title">Wanna Play? Incorporating Playful Pedagogy in Counselor Education</div><div class="entry-org">Rocky Mountain Association for Counselor Education and Supervision Regional Conference, Virtual.</div></div>
           </div>
         </div>
 
