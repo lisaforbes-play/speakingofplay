@@ -19,11 +19,12 @@
       --accent-2: #8b5cf6;
       --accent-soft: rgba(217, 108, 74, 0.12);
       --shadow: 0 16px 50px rgba(0, 0, 0, 0.08);
-      --radius: 24px;
       --max: 1180px;
     }
 
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
 
     html {
       scroll-behavior: smooth;
@@ -43,11 +44,6 @@
     a {
       color: inherit;
       text-decoration: none;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
     }
 
     .container {
@@ -100,8 +96,9 @@
       color: var(--muted);
     }
 
-    .nav-links a:hover {
-      color: var(--ink);
+    .nav-links a:hover,
+    .about-copy a:hover {
+      color: var(--accent);
     }
 
     .button {
@@ -128,30 +125,30 @@
 
     .button-secondary {
       border-color: var(--line);
-      background: rgba(255,255,255,0.6);
+      background: rgba(255,255,255,0.65);
     }
 
     .hero {
-      padding: 1rem 0 1.5rem;
+      padding: 1rem 0 2.25rem;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
+      grid-template-columns: 1.15fr 0.85fr;
       gap: 1rem;
-      align-items: start;
+      align-items: stretch;
     }
 
     .hero-copy,
     .hero-card {
-      background: rgba(255, 253, 249, 0.74);
+      background: rgba(255, 253, 249, 0.78);
       border: 1px solid rgba(29, 27, 26, 0.08);
       border-radius: 32px;
       box-shadow: var(--shadow);
     }
 
     .hero-copy {
-      padding: 1.75rem;
+      padding: 2rem;
     }
 
     .eyebrow {
@@ -165,7 +162,7 @@
       font-size: 0.82rem;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      margin-bottom: 1.25rem;
+      margin-bottom: 1rem;
     }
 
     .eyebrow::before {
@@ -184,14 +181,14 @@
 
     h1 {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(2.9rem, 7vw, 5.4rem);
+      font-size: clamp(2.6rem, 5.2vw, 4.7rem);
       letter-spacing: -0.04em;
       margin-bottom: 1rem;
     }
 
     .hero-copy p {
-      font-size: 1.08rem;
-      max-width: 48rem;
+      font-size: 1.03rem;
+      max-width: 44rem;
       color: var(--muted);
       margin: 0 0 1rem;
     }
@@ -200,68 +197,49 @@
       display: flex;
       flex-wrap: wrap;
       gap: 0.85rem;
-      margin-top: 1.75rem;
+      margin-top: 1.6rem;
     }
 
     .hero-card {
-      padding: 0.85rem;
+      padding: 1.6rem;
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
-      gap: 0.85rem;
-      background:
-        linear-gradient(180deg, rgba(255,255,255,0.92), rgba(255,255,255,0.7)),
-        radial-gradient(circle at top right, rgba(139, 92, 246, 0.10), transparent 40%);
     }
 
-    .quote-card {
-      border-radius: 24px;
-      background: rgba(255,255,255,0.7);
-      border: 1px solid rgba(29, 27, 26, 0.08);
-      padding: 0.85rem;
+    .comparison-card h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 4vw, 3.8rem);
+      letter-spacing: -0.04em;
+      margin-bottom: 1rem;
     }
 
-    .quote-card p {
-      margin: 0;
-      font-size: 1rem;
+    .comparison-card p {
       color: var(--muted);
+      margin: 0 0 1.2rem;
+      font-size: 1.02rem;
     }
 
-    .quote-card strong {
-      display: block;
-      margin-top: 0.85rem;
+    .comparison-block {
+      padding-bottom: 1rem;
+      margin-bottom: 1.1rem;
+      border-bottom: 1px solid rgba(217, 108, 74, 0.25);
+    }
+
+    .comparison-block:last-of-type {
+      border-bottom: none;
+      margin-bottom: 0.7rem;
+      padding-bottom: 0;
+    }
+
+    .comparison-end {
+      font-weight: 500;
       color: var(--ink);
-      font-size: 0.95rem;
-    }
-
-    .mini-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 0.85rem;
-    }
-
-    .mini-panel {
-      border-radius: 20px;
-      padding: 0.85rem;
-      background: rgba(255,255,255,0.78);
-      border: 1px solid rgba(29, 27, 26, 0.08);
-    }
-
-    .mini-panel .label {
-      font-size: 0.78rem;
-      color: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin-bottom: 0.35rem;
-    }
-
-    .mini-panel .value {
-      font-weight: 600;
-      font-size: 1rem;
+      margin-top: 0.35rem;
     }
 
     section {
-      padding: 2rem 0 4.5rem;
+      padding: 1.5rem 0 4rem;
     }
 
     .section-intro {
@@ -291,7 +269,7 @@
     .path-card {
       position: relative;
       overflow: hidden;
-      min-height: 310px;
+      min-height: 290px;
       border-radius: 30px;
       padding: 2rem;
       border: 1px solid rgba(29, 27, 26, 0.08);
@@ -344,74 +322,17 @@
       border-radius: 999px;
       background: rgba(255,255,255,0.88);
       border: 1px solid rgba(29, 27, 26, 0.08);
+      position: relative;
+      z-index: 2;
     }
 
     .path-link::after {
       content: "→";
     }
 
-    .distinction {
-      display: grid;
-      grid-template-columns: 0.95fr 1.05fr;
-      gap: 1.5rem;
-      align-items: start;
-    }
-
-    .distinction-main,
-    .distinction-note {
-      background: rgba(255,255,255,0.72);
-      border-radius: 28px;
-      border: 1px solid rgba(29, 27, 26, 0.08);
-      box-shadow: var(--shadow);
-      padding: 2rem;
-    }
-
-    .distinction-main p,
-    .distinction-note p {
-      color: var(--muted);
-      margin: 0 0 1rem;
-      font-size: 1.02rem;
-    }
-
-    .distinction-note {
-      background: linear-gradient(180deg, rgba(255,255,255,0.78), rgba(255,255,255,0.9));
-    }
-
-    .distinction-note .big-line {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(1.8rem, 4vw, 2.8rem);
-      line-height: 1.12;
-      margin-bottom: 1rem;
-    }
-
-    .shift-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 1rem;
-    }
-
-    .shift-card {
-      border-radius: 22px;
-      padding: 1.25rem;
-      background: rgba(255,255,255,0.72);
-      border: 1px solid rgba(29, 27, 26, 0.08);
-      box-shadow: var(--shadow);
-    }
-
-    .shift-card .from {
-      color: var(--muted);
-      font-size: 0.95rem;
-      margin-bottom: 0.25rem;
-    }
-
-    .shift-card .to {
-      font-size: 1.15rem;
-      font-weight: 700;
-    }
-
     .about-grid {
       display: grid;
-      grid-template-columns: 0.75fr 1.25fr;
+      grid-template-columns: 0.78fr 1.22fr;
       gap: 1.5rem;
     }
 
@@ -419,7 +340,7 @@
     .about-copy {
       border-radius: 28px;
       padding: 2rem;
-      background: rgba(255,255,255,0.74);
+      background: rgba(255,255,255,0.78);
       border: 1px solid rgba(29, 27, 26, 0.08);
       box-shadow: var(--shadow);
     }
@@ -439,19 +360,33 @@
       font-size: 0.95rem;
     }
 
-    .credential-list {
+    .about-copy p {
+      font-size: 1.04rem;
+      color: var(--ink);
+      margin: 0 0 1.2rem;
+    }
+
+    .publication-list {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 0.85rem;
-      margin-top: 1.25rem;
+      margin-top: 1.35rem;
     }
 
-    .credential {
-      padding: 1rem;
+    .publication-card {
+      display: block;
+      padding: 1rem 1rem 1.05rem;
       border-radius: 18px;
       background: rgba(246, 241, 234, 0.9);
       border: 1px solid rgba(29, 27, 26, 0.06);
-      font-size: 0.96rem;
+      font-size: 0.98rem;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+    }
+
+    .publication-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+      border-color: rgba(217, 108, 74, 0.35);
     }
 
     .cta-band {
@@ -501,19 +436,13 @@
     @media (max-width: 960px) {
       .hero-grid,
       .pathways,
-      .distinction,
-      .about-grid {
+      .about-grid,
+      .publication-list {
         grid-template-columns: 1fr;
-      }
-
-      .hero {
-        padding-top: 1.25rem;
       }
 
       .hero-copy,
       .hero-card,
-      .distinction-main,
-      .distinction-note,
       .about-card,
       .about-copy,
       .cta-box {
@@ -531,19 +460,14 @@
         gap: 0.85rem;
       }
 
-      .mini-grid,
-      .shift-grid,
-      .credential-list {
-        grid-template-columns: 1fr;
-      }
-
       h1 {
-        font-size: clamp(2.5rem, 14vw, 4rem);
+        font-size: clamp(2.3rem, 12vw, 3.9rem);
       }
 
       .section-intro h2,
-      .cta-box h2 {
-        font-size: clamp(1.8rem, 9vw, 2.6rem);
+      .cta-box h2,
+      .comparison-card h2 {
+        font-size: clamp(1.8rem, 9vw, 2.8rem);
       }
     }
   </style>
@@ -559,7 +483,7 @@
         <a href="index.html">Home</a>
         <a href="pedagogy.html">For Colleges & Organizations</a>
         <a href="play-therapy.html">For Therapists</a>
-        <a href="mailto:youremail@example.com">Contact</a>
+        <a href="mailto:lisakosena@gmail.com">Contact</a>
       </nav>
     </div>
   </header>
@@ -573,34 +497,23 @@
           <p>Most systems we work in were built for control, efficiency, and predictability. Somewhere along the way, curiosity, connection, and humanity got squeezed out.</p>
           <p>Play isn’t extra. It isn’t just an icebreaker or a strategy. It’s what brings people back online.</p>
           <div class="hero-actions">
-            <a class="button button-primary" href="mailto:youremail@example.com">Start a conversation</a>
-            <a class="button button-secondary" href="#pathways">Explore my speaking</a>
+            <a class="button button-primary" href="pedagogy.html">For Colleges & Organizations</a>
+            <a class="button button-secondary" href="play-therapy.html">For Therapists</a>
           </div>
         </div>
 
-        <aside class="hero-card">
-          <div class="quote-card">
-            <p>“Play loosens the grip of control just enough to let something else emerge.”</p>
-            <strong>Lisa Forbes</strong>
+        <aside class="hero-card comparison-card">
+          <h2>Same word. Different work.</h2>
+
+          <div class="comparison-block">
+            <p>In educational settings, I focus on how play rehumanizes learning and invites curiosity, risk-taking, and connection back into the room.</p>
           </div>
-          <div class="mini-grid">
-            <div class="mini-panel">
-              <div class="label">Work with</div>
-              <div class="value">Colleges, organizations, clinicians</div>
-            </div>
-            <div class="mini-panel">
-              <div class="label">Focus</div>
-              <div class="value">Learning, healing, human development</div>
-            </div>
-            <div class="mini-panel">
-              <div class="label">Approach</div>
-              <div class="value">Research grounded, experiential, deeply human</div>
-            </div>
-            <div class="mini-panel">
-              <div class="label">Energy</div>
-              <div class="value">Warm, disruptive, alive</div>
-            </div>
+
+          <div class="comparison-block">
+            <p>In clinical settings, I focus on play as the primary language through which children express, process, and make sense of their internal worlds.</p>
           </div>
+
+          <p class="comparison-end">The throughline is play. The application is distinct.</p>
         </aside>
       </div>
     </section>
@@ -635,52 +548,6 @@
     </section>
 
     <section>
-      <div class="container distinction">
-        <div class="distinction-main">
-          <div class="section-intro">
-            <h2>Same word. Different work.</h2>
-          </div>
-          <p>In educational settings, I focus on how play rehumanizes learning and invites curiosity, risk-taking, and connection back into the room.</p>
-          <p>In clinical settings, I focus on play as the primary language through which children express, process, and make sense of their internal worlds.</p>
-          <p>The throughline is play. The application is distinct.</p>
-        </div>
-
-        <div class="distinction-note">
-          <div class="big-line">This isn’t about adding something new on top.</div>
-          <p>It’s about shifting how we understand what’s already happening, and creating conditions where people can learn, grow, and heal more fully.</p>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="container">
-        <div class="section-intro">
-          <h2>What happens in the room</h2>
-          <p>People don’t just leave with ideas. They leave having experienced something different.</p>
-        </div>
-
-        <div class="shift-grid">
-          <div class="shift-card">
-            <div class="from">From</div>
-            <div class="to">Control → Curiosity</div>
-          </div>
-          <div class="shift-card">
-            <div class="from">From</div>
-            <div class="to">Performance → Presence</div>
-          </div>
-          <div class="shift-card">
-            <div class="from">From</div>
-            <div class="to">Rigid outcomes → Emergent learning</div>
-          </div>
-          <div class="shift-card">
-            <div class="from">From</div>
-            <div class="to">Managing behavior → Understanding meaning</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section>
       <div class="container about-grid">
         <div class="about-card">
           <div class="portrait">Add a speaking photo of yourself here later. For now, this can stay as a placeholder.</div>
@@ -690,14 +557,34 @@
           <div class="section-intro">
             <h2>About Lisa</h2>
           </div>
-          <p>Lisa Forbes is a faculty member at the University of Colorado Denver, a licensed professional counselor, and a registered play therapist supervisor. She is also the co-founder of Professors at Play, a global network of faculty exploring playful pedagogy in higher education.</p>
-          <p>Her work lives at the intersection of teaching, therapy, and human development, bringing a rare blend of research, lived experience, and embodied practice into every space she enters.</p>
 
-          <div class="credential-list">
-            <div class="credential">Faculty member and speaker in higher education</div>
-            <div class="credential">Co-founder of Professors at Play</div>
-            <div class="credential">Licensed professional counselor</div>
-            <div class="credential">Registered play therapist supervisor</div>
+          <p>
+            Lisa Forbes is a faculty member at
+            <a href="https://education.ucdenver.edu/about-us/faculty-directory/Forbes-Lisa-UCD6000093464" target="_blank" rel="noopener noreferrer">the University of Colorado Denver</a>,
+            a Licensed Professional Counselor (LPC), and a Registered Play Therapist Supervisor (RPT-S™).
+            She co-founded
+            <a href="https://professorsatplay.org/" target="_blank" rel="noopener noreferrer">Professors at Play</a>,
+            a global network of faculty exploring playful pedagogy in higher education.
+          </p>
+
+          <p>
+            Her work lives at the intersection of teaching, therapy, and human development, bringing a rare blend of research, lived experience, and embodied practice into every space she enters.
+          </p>
+
+          <div class="publication-list">
+            <a class="publication-card" href="https://playstorypress.org/books/professors-at-play-playbook/" target="_blank" rel="noopener noreferrer">Professors at Play PlayBook</a>
+
+            <a class="publication-card" href="https://playstorypress.org/books/professors-at-play-online-playbook/" target="_blank" rel="noopener noreferrer">Professors at Play Online PlayBook</a>
+
+            <a class="publication-card" href="https://playstorypress.org/books/professors-at-play-ai-playbook/" target="_blank" rel="noopener noreferrer">Professors at Play AI PlayBook</a>
+
+            <a class="publication-card" href="https://www.amazon.com/Only-Kids-Play-Save-World/dp/131210726X" target="_blank" rel="noopener noreferrer">Only Kids and Play Can Save the World</a>
+
+            <a class="publication-card" href="https://www.insidehighered.com/news/faculty-issues/teaching/2023/12/13/nonconformists-embrace-play-tool-teaching-learning" target="_blank" rel="noopener noreferrer">Inside Higher Ed Article</a>
+
+            <a class="publication-card" href="https://jtl.uwindsor.ca/index.php/jtl/article/view/6515/5264" target="_blank" rel="noopener noreferrer">The Process of Play in Learning in Higher Education</a>
+
+            <a class="publication-card" href="https://www.journalofplayinadulthood.org.uk/article/id/1326/" target="_blank" rel="noopener noreferrer">15 Play Experts' Vision for a More Playful Future</a>
           </div>
         </div>
       </div>
@@ -710,7 +597,7 @@
             <h2>Bring this work to your campus, conference, or training.</h2>
             <p>If you’re looking for a keynote, workshop, or clinical training that feels thoughtful, alive, and deeply human, let’s talk.</p>
           </div>
-          <a class="button button-primary" href="mailto:youremail@example.com">Start a conversation</a>
+          <a class="button button-primary" href="mailto:lisakosena@gmail.com">Start a conversation</a>
         </div>
       </div>
     </section>
