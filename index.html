@@ -139,7 +139,7 @@
       display: grid;
       grid-template-columns: 1.15fr 0.85fr;
       gap: 1rem;
-      align-items: stretch;
+      align-items: start;
     }
 
     .hero-copy,
@@ -196,19 +196,9 @@
       margin: 0 0 1rem;
     }
 
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.85rem;
-      margin-top: 1.6rem;
-      justify-content: center;
-    }
-
     .hero-card {
       padding: 1.6rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
+      display: block;
     }
 
     .comparison-card h2 {
@@ -222,19 +212,26 @@
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 1rem;
-      margin-bottom: 1.15rem;
+      margin-bottom: 1rem;
+    }
+
+    .comparison-blurb {
+      background: rgba(246, 241, 234, 0.55);
+      border: 1px solid rgba(29, 27, 26, 0.06);
+      border-radius: 20px;
+      padding: 1rem;
     }
 
     .comparison-blurb p {
       color: var(--muted);
       margin: 0;
-      font-size: 1.02rem;
+      font-size: 1rem;
     }
 
     .comparison-divider {
       height: 1px;
       background: rgba(217, 108, 74, 0.25);
-      margin: 0.2rem 0 1rem;
+      margin: 0.3rem 0 1rem;
     }
 
     .comparison-end {
@@ -486,16 +483,6 @@
       .comparison-card h2 {
         font-size: clamp(1.8rem, 9vw, 2.8rem);
       }
-
-      .hero-actions {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .button {
-        width: 100%;
-        max-width: 320px;
-      }
     }
   </style>
 </head>
@@ -524,11 +511,6 @@
           <h1>Play changes everything. We just forgot how to let it.</h1>
           <p>Whether we are trying to help people learn, grow, or heal, play changes the quality of the room. It opens space for curiosity, expression, connection, and movement.</p>
           <p>Sometimes that looks like rehumanizing a classroom. Sometimes it looks like understanding a child’s story in the playroom. Different spaces, different purposes, same deep respect for what becomes possible when play is allowed back in.</p>
-
-          <div class="hero-actions">
-            <a class="button button-coral" href="pedagogy.html">For Colleges & Organizations</a>
-            <a class="button button-lavender" href="play-therapy.html">For Therapists</a>
-          </div>
         </div>
 
         <aside class="hero-card comparison-card">
@@ -592,37 +574,30 @@
           </div>
 
           <p>
-            Lisa Forbes is a faculty member at
+            I’m a faculty member at
             <a href="https://education.ucdenver.edu/about-us/faculty-directory/Forbes-Lisa-UCD6000093464" target="_blank" rel="noopener noreferrer">the University of Colorado Denver</a>,
             a Licensed Professional Counselor (LPC), and a Registered Play Therapist Supervisor (RPT-S™).
-            She co-founded
+            I co-founded
             <a href="https://professorsatplay.org/" target="_blank" rel="noopener noreferrer">Professors at Play</a>,
             a global network of faculty exploring playful pedagogy in higher education.
           </p>
 
           <p>
-            Her work lives at the intersection of teaching, therapy, and human development, bringing a rare blend of research, lived experience, and embodied practice into every space she enters.
+            My work lives at the intersection of teaching, therapy, and human development, bringing together research, lived experience, and embodied practice in ways that help people feel more alive in the spaces they inhabit.
           </p>
 
           <p class="work-intro">
-            Want to poke around a little? Here are a few books, articles, and projects that give a fuller feel for her work.
+            Want to poke around a little? Here are a few books, articles, and projects that give a fuller feel for my work.
           </p>
 
           <div class="publication-list">
             <a class="publication-card" href="https://playstorypress.org/books/professors-at-play-playbook/" target="_blank" rel="noopener noreferrer">Professors at Play PlayBook</a>
-
             <a class="publication-card" href="https://playstorypress.org/books/professors-at-play-online-playbook/" target="_blank" rel="noopener noreferrer">Professors at Play Online PlayBook</a>
-
             <a class="publication-card" href="https://playstorypress.org/books/professors-at-play-ai-playbook/" target="_blank" rel="noopener noreferrer">Professors at Play AI PlayBook</a>
-
             <a class="publication-card" href="https://www.amazon.com/Only-Kids-Play-Save-World/dp/131210726X" target="_blank" rel="noopener noreferrer">Only Kids and Play Can Save the World</a>
-
             <a class="publication-card" href="https://youtu.be/6wkQKCO_5-0?feature=shared" target="_blank" rel="noopener noreferrer">Therapist Confidential Podcast with Travis Heath</a>
-
             <a class="publication-card" href="https://jtl.uwindsor.ca/index.php/jtl/article/view/6515/5264" target="_blank" rel="noopener noreferrer">The Process of Play in Learning in Higher Education</a>
-
             <a class="publication-card" href="https://www.journalofplayinadulthood.org.uk/article/id/1326/" target="_blank" rel="noopener noreferrer">15 Play Experts' Vision for a More Playful Future</a>
-
             <a class="publication-card" href="https://www.facultyfocus.com/author/ff-lisaforbes/" target="_blank" rel="noopener noreferrer">Articles on Playful Online Learning</a>
           </div>
         </div>
