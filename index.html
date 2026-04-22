@@ -11,25 +11,18 @@
   <style>
     :root {
       --bg: #f6f1ea;
-      --paper: #fffdf9;
+      --paper: rgba(255, 253, 249, 0.82);
       --ink: #1d1b1a;
       --muted: #5e5853;
       --line: rgba(29, 27, 26, 0.12);
       --accent-coral: #d96c4a;
       --accent-lavender: #8b5cf6;
       --accent-coral-soft: rgba(217, 108, 74, 0.12);
-      --accent-lavender-soft: rgba(139, 92, 246, 0.12);
       --shadow: 0 16px 50px rgba(0, 0, 0, 0.08);
       --max: 1180px;
     }
 
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
@@ -47,6 +40,11 @@
       text-decoration: none;
     }
 
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
     .container {
       width: min(var(--max), calc(100% - 2rem));
       margin: 0 auto;
@@ -57,7 +55,7 @@
       top: 0;
       z-index: 20;
       backdrop-filter: blur(14px);
-      background: rgba(246, 241, 234, 0.82);
+      background: rgba(246, 241, 234, 0.84);
       border-bottom: 1px solid rgba(29, 27, 26, 0.08);
     }
 
@@ -106,13 +104,10 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 0.5rem;
-      padding: 0.95rem 1.35rem;
+      padding: 0.95rem 1.25rem;
       border-radius: 999px;
-      border: 1px solid transparent;
       font-weight: 600;
-      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, border-color 0.2s ease;
-      text-align: center;
+      transition: transform 0.18s ease;
     }
 
     .button:hover {
@@ -125,14 +120,8 @@
       box-shadow: var(--shadow);
     }
 
-    .button-lavender {
-      background: var(--accent-lavender);
-      color: white;
-      box-shadow: var(--shadow);
-    }
-
     .hero {
-      padding: 1rem 0 2.25rem;
+      padding: 1rem 0 2rem;
     }
 
     .hero-grid {
@@ -143,15 +132,23 @@
     }
 
     .hero-copy,
-    .hero-card {
-      background: rgba(255, 253, 249, 0.78);
+    .hero-card,
+    .path-card,
+    .about-card,
+    .about-copy,
+    .cta-box {
+      background: var(--paper);
       border: 1px solid rgba(29, 27, 26, 0.08);
       border-radius: 32px;
       box-shadow: var(--shadow);
     }
 
-    .hero-copy {
-      padding: 2rem;
+    .hero-copy,
+    .hero-card,
+    .path-card,
+    .about-card,
+    .about-copy {
+      padding: 1.7rem;
     }
 
     .eyebrow {
@@ -161,7 +158,6 @@
       padding: 0.45rem 0.85rem;
       border-radius: 999px;
       background: var(--accent-coral-soft);
-      color: var(--ink);
       font-size: 0.82rem;
       letter-spacing: 0.08em;
       text-transform: uppercase;
@@ -184,34 +180,37 @@
 
     h1 {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(2.45rem, 4.8vw, 4.45rem);
+      font-size: clamp(2.5rem, 4.8vw, 4.4rem);
       letter-spacing: -0.04em;
       margin-bottom: 1rem;
     }
 
-    .hero-copy p {
-      font-size: 1.03rem;
-      max-width: 44rem;
-      color: var(--muted);
-      margin: 0 0 1rem;
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      letter-spacing: -0.03em;
     }
 
-    .hero-card {
-      padding: 1.6rem;
-      display: block;
+    .hero-copy p,
+    .section-intro p,
+    .comparison-blurb p,
+    .comparison-end,
+    .path-card p,
+    .about-copy p,
+    .work-intro,
+    .cta-box p {
+      color: var(--muted);
+      font-size: 1.02rem;
     }
 
     .comparison-card h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(2rem, 3.7vw, 3.5rem);
-      letter-spacing: -0.04em;
       margin-bottom: 1rem;
     }
 
     .comparison-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 1rem;
+      gap: 0.85rem;
       margin-bottom: 1rem;
     }
 
@@ -222,76 +221,25 @@
       padding: 1rem;
     }
 
-    .comparison-blurb p {
-      color: var(--muted);
-      margin: 0;
-      font-size: 1rem;
-    }
-
     .comparison-divider {
       height: 1px;
       background: rgba(217, 108, 74, 0.25);
-      margin: 0.3rem 0 1rem;
-    }
-
-    .comparison-end {
-      font-weight: 500;
-      color: var(--ink);
-      margin: 0;
+      margin: 0.2rem 0 1rem;
     }
 
     section {
-      padding: 1.5rem 0 4rem;
+      padding: 1.5rem 0 3rem;
     }
 
     .section-intro {
       max-width: 46rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .section-intro h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(2rem, 4vw, 3.4rem);
-      margin-bottom: 0.85rem;
-      letter-spacing: -0.03em;
-    }
-
-    .section-intro p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 1.03rem;
+      margin-bottom: 1.25rem;
     }
 
     .pathways {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 1.25rem;
-    }
-
-    .path-card {
-      position: relative;
-      overflow: hidden;
-      min-height: 290px;
-      border-radius: 30px;
-      padding: 2rem;
-      border: 1px solid rgba(29, 27, 26, 0.08);
-      box-shadow: var(--shadow);
-      background: linear-gradient(180deg, rgba(255,255,255,0.92), rgba(255,255,255,0.76));
-    }
-
-    .path-card::after {
-      content: "";
-      position: absolute;
-      inset: auto -40px -40px auto;
-      width: 180px;
-      height: 180px;
-      border-radius: 999px;
-      opacity: 0.12;
-      background: var(--accent-coral);
-    }
-
-    .path-card.secondary::after {
-      background: var(--accent-lavender);
+      gap: 1rem;
     }
 
     .path-kicker {
@@ -304,28 +252,17 @@
 
     .path-card h3 {
       font-family: 'Playfair Display', serif;
-      font-size: 2rem;
+      font-size: 1.9rem;
       margin-bottom: 0.75rem;
-      letter-spacing: -0.03em;
-    }
-
-    .path-card p {
-      color: var(--muted);
-      margin: 0 0 1.25rem;
-      max-width: 32rem;
     }
 
     .path-link {
       display: inline-flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: 0.4rem;
       font-weight: 600;
-      padding: 0.8rem 1rem;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.88);
-      border: 1px solid rgba(29, 27, 26, 0.08);
-      position: relative;
-      z-index: 2;
+      margin-top: 0.5rem;
+      color: var(--accent-coral);
     }
 
     .path-link::after {
@@ -335,20 +272,13 @@
     .about-grid {
       display: grid;
       grid-template-columns: 0.78fr 1.22fr;
-      gap: 1.5rem;
-    }
-
-    .about-card,
-    .about-copy {
-      border-radius: 28px;
-      padding: 2rem;
-      background: rgba(255,255,255,0.78);
-      border: 1px solid rgba(29, 27, 26, 0.08);
-      box-shadow: var(--shadow);
+      gap: 1rem;
     }
 
     .portrait {
-      aspect-ratio: 4 / 5;
+      width: 100%;
+      max-width: 320px;
+      margin: 0 auto;
       border-radius: 22px;
       overflow: hidden;
       background: #efe7dc;
@@ -356,29 +286,31 @@
 
     .portrait img {
       width: 100%;
-      height: 100%;
+      height: auto;
       object-fit: cover;
-      display: block;
     }
 
-    .about-copy p {
-      font-size: 1.04rem;
-      color: var(--ink);
-      margin: 0 0 1.2rem;
+    .support-image {
+      width: 100%;
+      max-width: 320px;
+      margin: 1rem auto 0;
+      border-radius: 20px;
+      overflow: hidden;
+      background: #efe7dc;
+      border: 1px solid rgba(29, 27, 26, 0.08);
     }
 
-    .work-intro {
-      color: var(--muted);
-      font-size: 1rem;
-      margin-top: 0.25rem;
-      margin-bottom: 1.2rem;
+    .support-image img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
     }
 
     .publication-list {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 0.85rem;
-      margin-top: 1.1rem;
+      margin-top: 1rem;
     }
 
     .publication-card {
@@ -386,49 +318,35 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      min-height: 108px;
+      min-height: 100px;
       padding: 1rem;
       border-radius: 18px;
       background: rgba(246, 241, 234, 0.9);
       border: 1px solid rgba(29, 27, 26, 0.06);
-      font-size: 0.96rem;
+      font-size: 0.95rem;
       line-height: 1.35;
-      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
     }
 
     .publication-card:hover {
       transform: translateY(-2px);
       box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
-      border-color: rgba(217, 108, 74, 0.35);
-    }
-
-    .cta-band {
-      padding-bottom: 5.5rem;
     }
 
     .cta-box {
-      border-radius: 32px;
-      padding: 2.5rem;
+      padding: 2rem;
       background: linear-gradient(135deg, rgba(29,27,26,0.96), rgba(53,50,47,0.96));
       color: white;
-      box-shadow: var(--shadow);
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 1.5rem;
+      gap: 1rem;
       flex-wrap: wrap;
     }
 
-    .cta-box h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(2rem, 4vw, 3rem);
-      margin-bottom: 0.6rem;
-    }
-
     .cta-box p {
-      margin: 0;
-      max-width: 42rem;
       color: rgba(255,255,255,0.78);
+      max-width: 42rem;
     }
 
     .site-footer {
@@ -448,19 +366,11 @@
 
     @media (max-width: 960px) {
       .hero-grid,
+      .comparison-grid,
       .pathways,
       .about-grid,
-      .publication-list,
-      .comparison-grid {
+      .publication-list {
         grid-template-columns: 1fr;
-      }
-
-      .hero-copy,
-      .hero-card,
-      .about-card,
-      .about-copy,
-      .cta-box {
-        padding: 1.6rem;
       }
     }
 
@@ -472,16 +382,6 @@
 
       .nav-links {
         gap: 0.85rem;
-      }
-
-      h1 {
-        font-size: clamp(2.15rem, 11vw, 3.7rem);
-      }
-
-      .section-intro h2,
-      .cta-box h2,
-      .comparison-card h2 {
-        font-size: clamp(1.8rem, 9vw, 2.8rem);
       }
     }
   </style>
@@ -515,7 +415,6 @@
 
         <aside class="hero-card comparison-card">
           <h2>Same word. Different work.</h2>
-
           <div class="comparison-grid">
             <div class="comparison-blurb">
               <p>In educational settings, I focus on how play rehumanizes learning and invites curiosity, risk-taking, and connection back into the room.</p>
@@ -524,14 +423,13 @@
               <p>In clinical settings, I focus on play as the primary language through which children express, process, and make sense of their internal worlds.</p>
             </div>
           </div>
-
           <div class="comparison-divider"></div>
           <p class="comparison-end">The throughline is play. The application is distinct.</p>
         </aside>
       </div>
     </section>
 
-    <section id="pathways">
+    <section>
       <div class="container">
         <div class="section-intro">
           <h2>Bring this work to your space</h2>
@@ -540,20 +438,16 @@
 
         <div class="pathways">
           <article class="path-card">
-            <div>
-              <div class="path-kicker">For colleges + organizations</div>
-              <h3>Playful Pedagogy</h3>
-              <p>Reimagining teaching, learning, and engagement through curiosity, risk-taking, connection, and emergent learning.</p>
-            </div>
+            <div class="path-kicker">For colleges + organizations</div>
+            <h3>Playful Pedagogy</h3>
+            <p>Reimagining teaching, learning, and engagement through curiosity, risk-taking, connection, and emergent learning.</p>
             <a class="path-link" href="pedagogy.html">Explore this pathway</a>
           </article>
 
-          <article class="path-card secondary">
-            <div>
-              <div class="path-kicker">For therapists + mental health professionals</div>
-              <h3>Play Therapy</h3>
-              <p>Deepening clinical practice through child-centered play therapy and a narrative-informed lens for understanding what unfolds in the playroom.</p>
-            </div>
+          <article class="path-card">
+            <div class="path-kicker">For therapists + mental health professionals</div>
+            <h3>Play Therapy</h3>
+            <p>Deepening clinical practice through child-centered play therapy and a narrative-informed lens for understanding what unfolds in the playroom.</p>
             <a class="path-link" href="play-therapy.html">Explore this pathway</a>
           </article>
         </div>
@@ -561,57 +455,33 @@
     </section>
 
     <section>
-     <div class="about-card">
-  <div class="portrait">
-    <img src="lisa-forbes.jpg" alt="Portrait of Lisa Forbes" />
-  </div>
-
-  <div class="support-image">
-    <img src="playposium-stage.jpg" alt="Lisa Forbes speaking on stage at Playposium 2024" />
-  </div>
-</div>
+      <div class="container about-grid">
+        <div class="about-card">
+          <div class="portrait">
+            <img src="lisa-forbes.jpg" alt="Portrait of Lisa Forbes" />
+          </div>
+          <div class="support-image">
+            <img src="playposium-stage.jpg" alt="Lisa Forbes speaking on stage at Playposium 2024" />
+          </div>
+        </div>
 
         <div class="about-copy">
           <div class="section-intro">
             <h2>About Lisa</h2>
           </div>
-          .support-image {
-  margin-top: 1rem;
-  border-radius: 20px;
-  overflow: hidden;
-  background: #efe7dc;
-  border: 1px solid rgba(29, 27, 26, 0.08);
-}
 
-.support-image img {
-  width: 100%;
-  display: block;
-  object-fit: cover;
-}
+          <p>I’m a faculty member at <a href="https://education.ucdenver.edu/about-us/faculty-directory/Forbes-Lisa-UCD6000093464" target="_blank" rel="noopener noreferrer">the University of Colorado Denver</a>, a Licensed Professional Counselor (LPC), and a Registered Play Therapist Supervisor (RPT-S™). I co-founded <a href="https://professorsatplay.org/" target="_blank" rel="noopener noreferrer">Professors at Play</a>, a global network of faculty exploring playful pedagogy in higher education.</p>
 
-          <p>
-            I’m a faculty member at
-            <a href="https://education.ucdenver.edu/about-us/faculty-directory/Forbes-Lisa-UCD6000093464" target="_blank" rel="noopener noreferrer">the University of Colorado Denver</a>,
-            a Licensed Professional Counselor (LPC), and a Registered Play Therapist Supervisor (RPT-S™).
-            I co-founded
-            <a href="https://professorsatplay.org/" target="_blank" rel="noopener noreferrer">Professors at Play</a>,
-            a global network of faculty exploring playful pedagogy in higher education.
-          </p>
+          <p>My work lives at the intersection of teaching, therapy, and human development, bringing together research, lived experience, and embodied practice in ways that help people feel more alive in the spaces they inhabit.</p>
 
-          <p>
-            My work lives at the intersection of teaching, therapy, and human development, bringing together research, lived experience, and embodied practice in ways that help people feel more alive in the spaces they inhabit.
-          </p>
-
-          <p class="work-intro">
-            Want to poke around a little? Here are a few books, articles, and projects that give a fuller feel for my work.
-          </p>
+          <p class="work-intro">Want to poke around a little? Here are a few books, articles, and projects that give a fuller feel for my work.</p>
 
           <div class="publication-list">
             <a class="publication-card" href="https://playstorypress.org/books/professors-at-play-playbook/" target="_blank" rel="noopener noreferrer">Professors at Play PlayBook</a>
             <a class="publication-card" href="https://playstorypress.org/books/professors-at-play-online-playbook/" target="_blank" rel="noopener noreferrer">Professors at Play Online PlayBook</a>
             <a class="publication-card" href="https://playstorypress.org/books/professors-at-play-ai-playbook/" target="_blank" rel="noopener noreferrer">Professors at Play AI PlayBook</a>
             <a class="publication-card" href="https://www.amazon.com/Only-Kids-Play-Save-World/dp/131210726X" target="_blank" rel="noopener noreferrer">Only Kids and Play Can Save the World</a>
-            <a class="publication-card" href="https://youtu.be/6wkQKCO_5-0?feature=shared" target="_blank" rel="noopener noreferrer">Therapist Confidential Podcast</a>
+            <a class="publication-card" href="https://youtu.be/6wkQKCO_5-0?feature=shared" target="_blank" rel="noopener noreferrer">Therapist Confidential Podcast with Travis Heath</a>
             <a class="publication-card" href="https://jtl.uwindsor.ca/index.php/jtl/article/view/6515/5264" target="_blank" rel="noopener noreferrer">The Process of Play in Learning in Higher Education</a>
             <a class="publication-card" href="https://www.journalofplayinadulthood.org.uk/article/id/1326/" target="_blank" rel="noopener noreferrer">15 Play Experts' Vision for a More Playful Future</a>
             <a class="publication-card" href="https://www.facultyfocus.com/author/ff-lisaforbes/" target="_blank" rel="noopener noreferrer">Articles on Playful Online Learning</a>
@@ -620,7 +490,7 @@
       </div>
     </section>
 
-    <section class="cta-band">
+    <section>
       <div class="container">
         <div class="cta-box">
           <div>
