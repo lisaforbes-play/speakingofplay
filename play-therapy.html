@@ -11,6 +11,7 @@
   <style>
     :root {
       --bg: #f6f1ea;
+      --paper: rgba(255, 253, 249, 0.82);
       --ink: #1d1b1a;
       --muted: #5e5853;
       --line: rgba(29, 27, 26, 0.12);
@@ -20,7 +21,9 @@
       --max: 1180px;
     }
 
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
 
     body {
       margin: 0;
@@ -30,7 +33,7 @@
         radial-gradient(circle at top right, rgba(139, 92, 246, 0.10), transparent 30%),
         radial-gradient(circle at bottom left, rgba(217, 108, 74, 0.06), transparent 28%),
         var(--bg);
-      line-height: 1.6;
+      line-height: 1.65;
     }
 
     a {
@@ -60,6 +63,12 @@
       padding: 1rem 0;
     }
 
+    .brand {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+    }
+
     .brand-kicker {
       font-size: 0.76rem;
       letter-spacing: 0.18em;
@@ -82,15 +91,19 @@
       color: var(--muted);
     }
 
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
     .hero {
-      padding: 1rem 0 2rem;
+      padding: 1.2rem 0 1.5rem;
     }
 
     .hero-box,
     .card {
-      background: rgba(255, 253, 249, 0.78);
+      background: var(--paper);
       border: 1px solid rgba(29, 27, 26, 0.08);
-      border-radius: 30px;
+      border-radius: 32px;
       box-shadow: var(--shadow);
     }
 
@@ -105,6 +118,7 @@
       padding: 0.45rem 0.85rem;
       border-radius: 999px;
       background: var(--accent-soft);
+      color: var(--ink);
       font-size: 0.82rem;
       letter-spacing: 0.08em;
       text-transform: uppercase;
@@ -120,24 +134,21 @@
       display: block;
     }
 
-    h1, h2, h3 {
-      margin: 0;
-      line-height: 1.05;
-    }
-
     h1, h2 {
       font-family: 'Playfair Display', serif;
       letter-spacing: -0.03em;
+      line-height: 1.05;
+      margin: 0;
     }
 
     h1 {
-      font-size: clamp(2.7rem, 6vw, 5rem);
+      font-size: clamp(2.6rem, 5vw, 4.6rem);
       margin-bottom: 1rem;
     }
 
     h2 {
-      font-size: clamp(1.9rem, 4vw, 3rem);
-      margin-bottom: 0.75rem;
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      margin-bottom: 0.8rem;
     }
 
     p {
@@ -146,8 +157,8 @@
       font-size: 1.04rem;
     }
 
-    section {
-      padding: 0 0 2rem;
+    .content-section {
+      padding: 0 0 1.5rem;
     }
 
     .two-col {
@@ -157,7 +168,7 @@
     }
 
     .card {
-      padding: 1.5rem;
+      padding: 1.75rem;
     }
 
     .list {
@@ -168,15 +179,41 @@
     .list-item {
       padding: 1rem;
       border-radius: 18px;
-      background: rgba(246, 241, 234, 0.9);
+      background: rgba(246, 241, 234, 0.92);
       border: 1px solid rgba(29, 27, 26, 0.06);
     }
 
+    .focus-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .focus-card {
+      padding: 1.2rem;
+      border-radius: 22px;
+      background: rgba(255,255,255,0.72);
+      border: 1px solid rgba(29, 27, 26, 0.08);
+    }
+
+    .focus-card .label {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .focus-card .value {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1.3;
+    }
+
     .highlight {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(1.6rem, 3vw, 2.4rem);
-      line-height: 1.2;
-      margin-bottom: 1rem;
+      font-size: 1.1rem;
+      color: var(--ink);
+      font-weight: 500;
     }
 
     .cta {
@@ -185,7 +222,7 @@
       justify-content: center;
       padding: 0.95rem 1.25rem;
       border-radius: 999px;
-      background: var(--ink);
+      background: var(--accent);
       color: white;
       font-weight: 600;
       margin-top: 0.5rem;
@@ -197,8 +234,18 @@
       font-size: 0.95rem;
     }
 
+    .footer-inner {
+      border-top: 1px solid rgba(29, 27, 26, 0.08);
+      padding-top: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
     @media (max-width: 900px) {
-      .two-col {
+      .two-col,
+      .focus-grid {
         grid-template-columns: 1fr;
       }
     }
@@ -208,88 +255,125 @@
         flex-direction: column;
         align-items: flex-start;
       }
+
+      .nav-links {
+        gap: 0.85rem;
+      }
+
+      .hero-box,
+      .card {
+        padding: 1.35rem;
+      }
     }
   </style>
 </head>
 <body>
   <header class="site-header">
     <div class="container nav">
-      <div>
-        <div class="brand-kicker">Speaking of Play</div>
+      <div class="brand">
+        <span class="brand-kicker">Speaking of Play</span>
         <a class="brand-name" href="index.html">Lisa Forbes</a>
       </div>
       <nav class="nav-links">
         <a href="index.html">Home</a>
         <a href="pedagogy.html">For Colleges & Organizations</a>
         <a href="play-therapy.html">For Therapists</a>
-        <a href="mailto:youremail@example.com">Contact</a>
+        <a href="previous-work.html">Previous Work</a>
+        <a href="mailto:lisakosena@gmail.com">Contact</a>
       </nav>
     </div>
   </header>
 
-  <main class="container">
+  <main>
     <section class="hero">
-      <div class="hero-box">
-        <div class="eyebrow">For therapists and mental health professionals</div>
-        <h1>Children don’t always have words. But they are always telling a story.</h1>
-        <p>In play therapy, play is not a technique layered onto treatment. It is the child’s primary language. Through play, children express what they cannot yet say directly, work through internal conflicts, and begin to make sense of their worlds.</p>
-        <p>My trainings and presentations help clinicians deepen their ability to see what is unfolding in the playroom, recognize the meaning carried in symbols and sequences, and respond in ways that support the child’s process without rushing, directing, or overinterpreting it.</p>
-      </div>
-    </section>
-
-    <section class="two-col">
-      <div class="card">
-        <h2>What I offer</h2>
-        <p>My play therapy speaking and training work is grounded in child-centered practice, with a narrative-informed lens that helps clinicians notice what is emerging in play and stay with it more skillfully.</p>
-        <div class="list">
-          <div class="list-item">Clinical trainings and conference presentations</div>
-          <div class="list-item">Workshops for therapists, supervisors, and mental health professionals</div>
-          <div class="list-item">Consultation and supervision support</div>
-          <div class="list-item">Case conceptualization through a narrative-informed child-centered lens</div>
-        </div>
-      </div>
-
-      <div class="card">
-        <h2>What makes this different</h2>
-        <div class="highlight">This is not about steering play or forcing meaning onto it.</div>
-        <p>It is about refining attention so clinicians can notice tensions, repetitions, roles, and shifts in the child’s play without taking over the process.</p>
-        <p>The story doesn’t change because we change it. It changes because it has finally been fully seen and held.</p>
-      </div>
-    </section>
-
-    <section class="two-col">
-      <div class="card">
-        <h2>What clinicians leave with</h2>
-        <div class="list">
-          <div class="list-item">More confidence in non-directive work with children</div>
-          <div class="list-item">A clearer sense of what to look for in play sequences</div>
-          <div class="list-item">Language that supports the child’s process without interpreting for them</div>
-          <div class="list-item">A deeper trust in the therapeutic pace of play therapy</div>
-        </div>
-      </div>
-
-      <div class="card">
-        <h2>Training focus areas</h2>
-        <div class="list">
-          <div class="list-item">Child-centered play therapy</div>
-          <div class="list-item">Narrative-informed play therapy</div>
-          <div class="list-item">Recognizing tensions, repetition, and shift in symbolic play</div>
-          <div class="list-item">Slowing down and staying with process in the playroom</div>
+      <div class="container">
+        <div class="hero-box">
+          <span class="eyebrow">For therapists and mental health professionals</span>
+          <h1>Children don’t always have words. But they are always telling a story.</h1>
+          <p>In play therapy, play is not a bonus activity or a technique layered on top. It is the child’s primary language. Through play, children express what they cannot yet say directly, work through internal conflict, and begin to make sense of their worlds.</p>
+          <p>My trainings and presentations help clinicians notice more, slow down more, and trust the therapeutic process more fully, especially when the work asks us to stay with what is emerging rather than rush to interpretation or outcome.</p>
         </div>
       </div>
     </section>
 
-    <section>
-      <div class="card">
-        <h2>Bring this to your training or clinical community</h2>
-        <p>If you’re looking for a workshop, keynote, or clinical training that helps therapists see the playroom with more depth, clarity, and trust in the process, let’s talk.</p>
-        <a class="cta" href="mailto:youremail@example.com">Start a conversation</a>
+    <section class="content-section">
+      <div class="container two-col">
+        <div class="card">
+          <h2>What I offer</h2>
+          <p>I offer workshops, trainings, and presentations that help therapists deepen their relationship to child-centered practice while refining how they attend to story, symbolism, repetition, and shift in the playroom.</p>
+          <div class="list">
+            <div class="list-item">Clinical trainings and conference presentations</div>
+            <div class="list-item">Workshops for therapists, supervisors, and mental health professionals</div>
+            <div class="list-item">Consultation and supervision support</div>
+            <div class="list-item">Narrative-informed ways of seeing what is unfolding in play</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2>What makes this different</h2>
+          <p>I’m not interested in steering a child’s play or forcing meaning onto it. I’m interested in helping clinicians refine attention so they can recognize the story that is already trying to become visible.</p>
+          <p class="highlight">The story doesn’t change because we change it. It changes because it has finally been fully seen and held.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <div class="container">
+        <div class="card">
+          <h2>What clinicians leave with</h2>
+          <p>People leave with more than ideas. They leave with a steadier, clearer sense of how to stay with the therapeutic process in the playroom.</p>
+
+          <div class="focus-grid">
+            <div class="focus-card">
+              <div class="label">More confidence in</div>
+              <div class="value">non-directive work with children</div>
+            </div>
+
+            <div class="focus-card">
+              <div class="label">A clearer sense of</div>
+              <div class="value">what to look for in play sequences</div>
+            </div>
+
+            <div class="focus-card">
+              <div class="label">Language that</div>
+              <div class="value">supports without overinterpreting</div>
+            </div>
+
+            <div class="focus-card">
+              <div class="label">A deeper trust in</div>
+              <div class="value">the pace and wisdom of the process</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <div class="container two-col">
+        <div class="card">
+          <h2>Training focus areas</h2>
+          <div class="list">
+            <div class="list-item">Child-centered play therapy</div>
+            <div class="list-item">Narrative child-centered play therapy</div>
+            <div class="list-item">Recognizing tensions, repetition, and shift in symbolic play</div>
+            <div class="list-item">Staying with process rather than rushing toward meaning</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2>Bring this to your training or clinical community</h2>
+          <p>If you’re looking for a workshop, presentation, or clinical training that helps therapists see the playroom with more depth, patience, and clarity, I’d love to talk.</p>
+          <a class="cta" href="mailto:lisakosena@gmail.com">Start a conversation</a>
+        </div>
       </div>
     </section>
   </main>
 
   <footer class="footer">
-    <div class="container">© Lisa Forbes · Speaking of Play</div>
+    <div class="container footer-inner">
+      <div>© Lisa Forbes</div>
+      <div>Speaking of Play</div>
+    </div>
   </footer>
 </body>
 </html>
