@@ -4,14 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lisa Forbes | Playful Pedagogy</title>
-  <meta name="description" content="Keynotes, workshops, and faculty development on playful pedagogy, higher education, and rehumanizing learning." />
+  <meta name="description" content="Keynotes, workshops, and faculty development on playful pedagogy, belonging, engagement, and transformative learning." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg: #f6f1ea;
-      --paper: #fffdf9;
+      --paper: rgba(255, 253, 249, 0.82);
       --ink: #1d1b1a;
       --muted: #5e5853;
       --line: rgba(29, 27, 26, 0.12);
@@ -21,7 +21,10 @@
       --max: 1180px;
     }
 
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       font-family: 'Inter', system-ui, sans-serif;
@@ -29,10 +32,18 @@
       background:
         radial-gradient(circle at top left, rgba(217, 108, 74, 0.10), transparent 30%),
         var(--bg);
-      line-height: 1.6;
+      line-height: 1.65;
     }
-    a { color: inherit; text-decoration: none; }
-    .container { width: min(var(--max), calc(100% - 2rem)); margin: 0 auto; }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 2rem));
+      margin: 0 auto;
+    }
 
     .site-header {
       position: sticky;
@@ -49,6 +60,12 @@
       justify-content: space-between;
       gap: 1rem;
       padding: 1rem 0;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
     }
 
     .brand-kicker {
@@ -73,14 +90,19 @@
       color: var(--muted);
     }
 
-    .hero {
-      padding: 1rem 0 2rem;
+    .nav-links a:hover {
+      color: var(--accent);
     }
 
-    .hero-box, .card {
-      background: rgba(255, 253, 249, 0.78);
+    .hero {
+      padding: 1.2rem 0 1.5rem;
+    }
+
+    .hero-box,
+    .card {
+      background: var(--paper);
       border: 1px solid rgba(29, 27, 26, 0.08);
-      border-radius: 30px;
+      border-radius: 32px;
       box-shadow: var(--shadow);
     }
 
@@ -95,6 +117,7 @@
       padding: 0.45rem 0.85rem;
       border-radius: 999px;
       background: var(--accent-soft);
+      color: var(--ink);
       font-size: 0.82rem;
       letter-spacing: 0.08em;
       text-transform: uppercase;
@@ -110,24 +133,21 @@
       display: block;
     }
 
-    h1, h2, h3 {
-      margin: 0;
-      line-height: 1.05;
-    }
-
     h1, h2 {
       font-family: 'Playfair Display', serif;
       letter-spacing: -0.03em;
+      line-height: 1.05;
+      margin: 0;
     }
 
     h1 {
-      font-size: clamp(2.7rem, 6vw, 5rem);
+      font-size: clamp(2.6rem, 5vw, 4.6rem);
       margin-bottom: 1rem;
     }
 
     h2 {
-      font-size: clamp(1.9rem, 4vw, 3rem);
-      margin-bottom: 0.75rem;
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      margin-bottom: 0.8rem;
     }
 
     p {
@@ -136,30 +156,56 @@
       font-size: 1.04rem;
     }
 
-    section {
-      padding: 0 0 2rem;
+    .content-section {
+      padding: 0 0 1.5rem;
     }
 
     .two-col {
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
+      grid-template-columns: 1.05fr 0.95fr;
       gap: 1rem;
     }
 
     .card {
-      padding: 1.5rem;
+      padding: 1.75rem;
     }
 
-    .topics, .outcomes {
+    .list {
       display: grid;
       gap: 0.85rem;
     }
 
-    .topic, .outcome {
+    .list-item {
       padding: 1rem;
       border-radius: 18px;
-      background: rgba(246, 241, 234, 0.9);
+      background: rgba(246, 241, 234, 0.92);
       border: 1px solid rgba(29, 27, 26, 0.06);
+    }
+
+    .room-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .room-card {
+      padding: 1.2rem;
+      border-radius: 22px;
+      background: rgba(255,255,255,0.72);
+      border: 1px solid rgba(29, 27, 26, 0.08);
+    }
+
+    .room-card .from {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .room-card .to {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--ink);
     }
 
     .cta {
@@ -168,7 +214,7 @@
       justify-content: center;
       padding: 0.95rem 1.25rem;
       border-radius: 999px;
-      background: var(--ink);
+      background: var(--accent);
       color: white;
       font-weight: 600;
       margin-top: 0.5rem;
@@ -180,8 +226,20 @@
       font-size: 0.95rem;
     }
 
+    .footer-inner {
+      border-top: 1px solid rgba(29, 27, 26, 0.08);
+      padding-top: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
     @media (max-width: 900px) {
-      .two-col { grid-template-columns: 1fr; }
+      .two-col,
+      .room-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
     @media (max-width: 720px) {
@@ -189,87 +247,125 @@
         flex-direction: column;
         align-items: flex-start;
       }
+
+      .nav-links {
+        gap: 0.85rem;
+      }
+
+      .hero-box,
+      .card {
+        padding: 1.35rem;
+      }
     }
   </style>
 </head>
 <body>
   <header class="site-header">
     <div class="container nav">
-      <div>
-        <div class="brand-kicker">Speaking of Play</div>
+      <div class="brand">
+        <span class="brand-kicker">Speaking of Play</span>
         <a class="brand-name" href="index.html">Lisa Forbes</a>
       </div>
       <nav class="nav-links">
         <a href="index.html">Home</a>
         <a href="pedagogy.html">For Colleges & Organizations</a>
         <a href="play-therapy.html">For Therapists</a>
-        <a href="mailto:youremail@example.com">Contact</a>
+        <a href="previous-work.html">Previous Work</a>
+        <a href="mailto:lisakosena@gmail.com">Contact</a>
       </nav>
     </div>
   </header>
 
-  <main class="container">
+  <main>
     <section class="hero">
-      <div class="hero-box">
-        <div class="eyebrow">For colleges and organizations</div>
-        <h1>Learning doesn’t need more control. It needs more humanity.</h1>
-        <p>Most classrooms and institutions are built around predictability, performance, and getting it right. But real learning happens when people can explore, risk, question, and not know.</p>
-        <p>I work with faculty, leaders, and organizations to rethink learning environments through the lens of play. Not as a set of tricks or engagement hacks, but as a deeper shift in how we design, facilitate, and experience learning.</p>
-      </div>
-    </section>
-
-    <section class="two-col">
-      <div class="card">
-        <h2>What I offer</h2>
-        <p>My talks and workshops help people move from rigid systems toward curiosity, connection, and presence.</p>
-        <div class="topics">
-          <div class="topic">Keynotes that challenge how we think about teaching and learning</div>
-          <div class="topic">Workshops that are immersive, experiential, and human</div>
-          <div class="topic">Faculty development rooted in curiosity, flexibility, and meaning</div>
-          <div class="topic">Conversations that make space for risk-taking and emergent learning</div>
-        </div>
-      </div>
-
-      <div class="card">
-        <h2>Sample topics</h2>
-        <div class="topics">
-          <div class="topic">Play is Not Extra</div>
-          <div class="topic">From Control to Curiosity</div>
-          <div class="topic">Designing for Emergent Learning</div>
-          <div class="topic">Growing Worlds Together</div>
+      <div class="container">
+        <div class="hero-box">
+          <span class="eyebrow">For colleges and organizations</span>
+          <h1>Learning doesn’t need more control. It needs more life in the room.</h1>
+          <p>I work with faculty, leaders, and organizations to rethink teaching and learning through the lens of play. Not as a gimmick, not as a set of cute activities, and not as a way to make rigid systems slightly more tolerable.</p>
+          <p>This work is about bringing curiosity, belonging, risk-taking, and real engagement back into learning spaces so people can do more than perform learning. They can actually experience it.</p>
         </div>
       </div>
     </section>
 
-    <section class="two-col">
-      <div class="card">
-        <h2>What makes this different</h2>
-        <p>I’m not just offering activities to make learning more fun. I’m challenging the underlying assumptions that make learning feel lifeless in the first place.</p>
-        <p>This work blends research, lived experience, facilitation, and embodiment. People don’t just hear about play. They experience what shifts when play is allowed back into the room.</p>
-      </div>
+    <section class="content-section">
+      <div class="container two-col">
+        <div class="card">
+          <h2>What I offer</h2>
+          <p>My talks and workshops help people loosen the grip of over-structure and reconnect with what makes learning feel human, alive, and meaningful.</p>
+          <div class="list">
+            <div class="list-item">Keynotes that challenge how we think about teaching and learning</div>
+            <div class="list-item">Workshops that are experiential, playful, and grounded in research</div>
+            <div class="list-item">Faculty development centered on curiosity, connection, and flexibility</div>
+            <div class="list-item">Sessions that help people imagine different ways of designing learning spaces</div>
+          </div>
+        </div>
 
-      <div class="card">
-        <h2>What people leave with</h2>
-        <div class="outcomes">
-          <div class="outcome">A different way of seeing classrooms and learning spaces</div>
-          <div class="outcome">Language for what hasn’t been working</div>
-          <div class="outcome">Permission to loosen rigid structures</div>
-          <div class="outcome">Practical ways to bring play back into learning</div>
+        <div class="card">
+          <h2>What makes this different</h2>
+          <p>I’m not just talking about engagement strategies. I’m interested in the deeper question of what kind of classroom, culture, or learning space we are creating in the first place.</p>
+          <p>Play shifts the energy of the room. It invites more honesty, more experimentation, more connection, and more possibility. That shift changes what learning can become.</p>
         </div>
       </div>
     </section>
 
-    <section>
-      <div class="card">
-        <h2>Bring this to your campus or organization</h2>
-        <p>If you want a keynote or workshop that is thoughtful, research-grounded, and fully alive, let’s talk.</p>
-        <a class="cta" href="mailto:youremail@example.com">Start a conversation</a>
+    <section class="content-section">
+      <div class="container">
+        <div class="card">
+          <h2>What happens in the room</h2>
+          <p>People don’t just leave with ideas. They leave having experienced something different.</p>
+
+          <div class="room-grid">
+            <div class="room-card">
+              <div class="from">From</div>
+              <div class="to">Control → Curiosity</div>
+            </div>
+
+            <div class="room-card">
+              <div class="from">From</div>
+              <div class="to">Performance → Presence</div>
+            </div>
+
+            <div class="room-card">
+              <div class="from">From</div>
+              <div class="to">Rigid outcomes → Emergent learning</div>
+            </div>
+
+            <div class="room-card">
+              <div class="from">From</div>
+              <div class="to">Managing behavior → Understanding meaning</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <div class="container two-col">
+        <div class="card">
+          <h2>Sample topics</h2>
+          <div class="list">
+            <div class="list-item">The Power of Play in Learning</div>
+            <div class="list-item">The Classroom as a Living System</div>
+            <div class="list-item">Playful Pedagogy: Igniting Belonging, Engagement, and Learning</div>
+            <div class="list-item">Designing Playful Interventions</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2>Bring this to your space</h2>
+          <p>If you’re looking for a keynote, workshop, or faculty training that feels warm, thoughtful, energizing, and deeply human, I’d love to talk.</p>
+          <a class="cta" href="mailto:lisakosena@gmail.com">Start a conversation</a>
+        </div>
       </div>
     </section>
   </main>
 
   <footer class="footer">
-    <div class="container">© Lisa Forbes · Speaking of Play</div>
+    <div class="container footer-inner">
+      <div>© Lisa Forbes</div>
+      <div>Speaking of Play</div>
+    </div>
   </footer>
 </body>
 </html>
