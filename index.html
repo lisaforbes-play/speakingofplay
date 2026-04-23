@@ -14,7 +14,6 @@
       --paper: rgba(255, 253, 249, 0.82);
       --ink: #1d1b1a;
       --muted: #5e5853;
-      --line: rgba(29, 27, 26, 0.12);
       --accent-coral: #d96c4a;
       --accent-lavender: #8b5cf6;
       --accent-coral-soft: rgba(217, 108, 74, 0.12);
@@ -35,15 +34,8 @@
       line-height: 1.6;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    img {
-      display: block;
-      max-width: 100%;
-    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
 
     .container {
       width: min(var(--max), calc(100% - 2rem));
@@ -110,9 +102,7 @@
       transition: transform 0.18s ease;
     }
 
-    .button:hover {
-      transform: translateY(-1px);
-    }
+    .button:hover { transform: translateY(-1px); }
 
     .button-coral {
       background: var(--accent-coral);
@@ -120,8 +110,9 @@
       box-shadow: var(--shadow);
     }
 
-    .hero {
-      padding: 1rem 0 2rem;
+    .hero,
+    section {
+      padding: 1.2rem 0 2rem;
     }
 
     .hero-grid {
@@ -149,6 +140,10 @@
     .about-card,
     .about-copy {
       padding: 1.7rem;
+    }
+
+    .comparison-card {
+      margin-top: 28px;
     }
 
     .eyebrow {
@@ -180,7 +175,7 @@
 
     h1 {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(2.5rem, 4.8vw, 4.4rem);
+      font-size: clamp(2.5rem, 4.8vw, 4.35rem);
       letter-spacing: -0.04em;
       margin-bottom: 1rem;
     }
@@ -227,13 +222,10 @@
       margin: 0.2rem 0 1rem;
     }
 
-    section {
-      padding: 1.5rem 0 3rem;
-    }
-
-    .section-intro {
-      max-width: 46rem;
-      margin-bottom: 1.25rem;
+    .centered-intro {
+      max-width: 56rem;
+      margin: 0 auto 1.5rem;
+      text-align: center;
     }
 
     .pathways {
@@ -284,12 +276,6 @@
       background: #efe7dc;
     }
 
-    .portrait img {
-      width: 100%;
-      height: auto;
-      object-fit: cover;
-    }
-
     .support-image {
       width: 100%;
       max-width: 320px;
@@ -298,12 +284,6 @@
       overflow: hidden;
       background: #efe7dc;
       border: 1px solid rgba(29, 27, 26, 0.08);
-    }
-
-    .support-image img {
-      width: 100%;
-      height: auto;
-      object-fit: cover;
     }
 
     .publication-list {
@@ -372,6 +352,10 @@
       .publication-list {
         grid-template-columns: 1fr;
       }
+
+      .comparison-card {
+        margin-top: 0;
+      }
     }
 
     @media (max-width: 720px) {
@@ -431,7 +415,7 @@
 
     <section>
       <div class="container">
-        <div class="section-intro">
+        <div class="section-intro centered-intro">
           <h2>Bring this work to your space</h2>
           <p>I speak across two distinct areas. They share a belief in the power of play, but they are not the same work.</p>
         </div>
@@ -461,7 +445,7 @@
             <img src="lisa-forbes.jpg" alt="Portrait of Lisa Forbes" />
           </div>
           <div class="support-image">
-            <img src="playposium-stage.jpg" alt="Lisa Forbes speaking on stage at Playposium 2024" />
+            <img src="playposium-stage.jpg" alt="Lisa Forbes speaking on stage at Playposium" />
           </div>
         </div>
 
@@ -481,7 +465,7 @@
             <a class="publication-card" href="https://playstorypress.org/books/professors-at-play-online-playbook/" target="_blank" rel="noopener noreferrer">Professors at Play Online PlayBook</a>
             <a class="publication-card" href="https://playstorypress.org/books/professors-at-play-ai-playbook/" target="_blank" rel="noopener noreferrer">Professors at Play AI PlayBook</a>
             <a class="publication-card" href="https://www.amazon.com/Only-Kids-Play-Save-World/dp/131210726X" target="_blank" rel="noopener noreferrer">Only Kids and Play Can Save the World</a>
-            <a class="publication-card" href="https://youtu.be/6wkQKCO_5-0?feature=shared" target="_blank" rel="noopener noreferrer">Therapist Confidential Podcast</a>
+            <a class="publication-card" href="https://youtu.be/6wkQKCO_5-0?feature=shared" target="_blank" rel="noopener noreferrer">Therapist Confidential Podcast with Travis Heath</a>
             <a class="publication-card" href="https://jtl.uwindsor.ca/index.php/jtl/article/view/6515/5264" target="_blank" rel="noopener noreferrer">The Process of Play in Learning in Higher Education</a>
             <a class="publication-card" href="https://www.journalofplayinadulthood.org.uk/article/id/1326/" target="_blank" rel="noopener noreferrer">15 Play Experts' Vision for a More Playful Future</a>
             <a class="publication-card" href="https://www.facultyfocus.com/author/ff-lisaforbes/" target="_blank" rel="noopener noreferrer">Articles on Playful Online Learning</a>
