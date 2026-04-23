@@ -269,6 +269,28 @@
       }
     }
 
+    .previous-hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 1rem;
+  align-items: start;
+}
+
+.previous-image-card {
+  padding: 1.25rem;
+}
+
+.small-feature-photo {
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+@media (max-width: 900px) {
+  .previous-hero-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
     @media (max-width: 720px) {
       .nav {
         flex-direction: column;
