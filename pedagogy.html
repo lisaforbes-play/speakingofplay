@@ -195,25 +195,36 @@
       text-align: center;
     }
 
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 0.9rem;
-      margin-top: 1rem;
-    }
+   .gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.8rem;
+  margin-top: 1rem;
+}
 
-    .gallery-item {
-      border-radius: 20px;
-      overflow: hidden;
-      background: #efe7dc;
-      border: 1px solid rgba(29, 27, 26, 0.08);
-    }
+.gallery-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-    .gallery-item img {
-      width: 100%;
-      aspect-ratio: 1 / 1;
-      object-fit: cover;
-      object-position: center;
+.gallery-item img {
+  width: 100%;
+  max-width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 18px;
+  border: 1px solid rgba(29, 27, 26, 0.08);
+  background: #efe7dc;
+}
+
+.gallery-caption {
+  font-size: 0.85rem;
+  color: var(--muted);
+  text-align: center;
+  margin-top: 0.4rem;
+  max-width: 200px;
+}
     }
 
     .cta-card {
@@ -360,25 +371,28 @@
           <p>A few glimpses of the spaces, energy, and moments that shape this work.</p>
 
           <div class="gallery-grid">
-            <div class="gallery-item">
-              <img src="/speakingofplay/site-images/playposium-audience.jpg" alt="Audience at Playposium" />
-            </div>
-            <p class="photo-caption">The Playposium participants</p>
-            </div>
-            <div class="gallery-item">
-              <img src="/speakingofplay/site-images/gary-lisa.jpg" alt="Lisa Forbes and Gary Ware at Playposium" />
-            </div>
-            <p class="photo-caption">Me with Gary Ware - Playful Rebellion Author!</p>
-            </div>
-            <div class="gallery-item">
-              <img src="/speakingofplay/site-images/stuart-family.jpg" alt="Stuarts daughter and granddaughter" />
-            </div>
-        <p class="photo-caption">Me with Stuart, his daughter Lauren, and granddaughter Mia!</p>
-            </div>
-            <div class="gallery-item">
-              <img src="/speakingofplay/site-images/speaker-stage.jpg" alt="stage" />
-            </div>
-          </div>
+  
+  <div class="gallery-item">
+    <img src="/speakingofplay/site-images/playposium-participants.jpg" alt="Playposium participants" />
+    <p class="gallery-caption">Playposium participants</p>
+  </div>
+
+  <div class="gallery-item">
+    <img src="/speakingofplay/site-images/gary-lisa.jpg" alt="Me with Gary Ware" />
+    <p class="gallery-caption">Me with Gary Ware — Playful Rebellion author</p>
+  </div>
+
+  <div class="gallery-item">
+    <img src="/speakingofplay/site-images/stuart-family.jpg" alt="With Stuart Brown" />
+    <p class="gallery-caption">Me with Stuart, Lauren, and Mia</p>
+  </div>
+
+  <div class="gallery-item">
+    <img src="/speakingofplay/site-images/speaking-stage.jpg" alt="Lisa Forbes" />
+    <p class="gallery-caption">The stage</p>
+  </div>
+
+</div>
         </div>
 
         <div class="card cta-card">
