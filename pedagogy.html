@@ -5,13 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lisa Forbes | Playful Pedagogy</title>
   <meta name="description" content="Keynotes, workshops, and faculty development on playful pedagogy, belonging, engagement, and transformative learning." />
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
   <style>
     :root {
       --bg: #f6f1ea;
-      --paper: rgba(255, 253, 249, 0.82);
+      --paper: rgba(255, 253, 249, 0.86);
       --ink: #1d1b1a;
       --muted: #5e5853;
       --accent: #d96c4a;
@@ -28,6 +30,7 @@
       color: var(--ink);
       background:
         radial-gradient(circle at top left, rgba(217, 108, 74, 0.10), transparent 30%),
+        radial-gradient(circle at bottom right, rgba(139, 92, 246, 0.06), transparent 28%),
         var(--bg);
       line-height: 1.65;
     }
@@ -85,9 +88,7 @@
       color: var(--muted);
     }
 
-    .nav-links a:hover {
-      color: var(--accent);
-    }
+    .nav-links a:hover { color: var(--accent); }
 
     .hero,
     .content-section {
@@ -133,14 +134,14 @@
     }
 
     h1 {
-      font-size: clamp(2.15rem, 3.6vw, 3.5rem);
+      font-size: clamp(2.15rem, 3.5vw, 3.35rem);
       margin-bottom: 1rem;
-      max-width: 24ch;
+      max-width: 25ch;
     }
 
     h2 {
       font-size: clamp(1.8rem, 3vw, 2.8rem);
-      margin-bottom: 0.8rem;
+      margin-bottom: 0.75rem;
     }
 
     p {
@@ -151,22 +152,30 @@
 
     .two-col {
       display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
+      grid-template-columns: 1.08fr 0.92fr;
       gap: 1rem;
+      align-items: stretch;
+    }
+
+    .bottom-two-col {
+      display: grid;
+      grid-template-columns: 1.18fr 0.82fr;
+      gap: 1rem;
+      align-items: center;
     }
 
     .list {
       display: grid;
-      gap: 0.85rem;
+      gap: 0.7rem;
       margin-top: 1rem;
     }
 
     .list-item {
-      padding: 1rem;
+      padding: 0.9rem 1rem;
       border-radius: 18px;
       background: rgba(246, 241, 234, 0.92);
       border: 1px solid rgba(29, 27, 26, 0.06);
-      font-size: 1rem;
+      font-size: 0.98rem;
       color: var(--ink);
     }
 
@@ -184,74 +193,90 @@
 
     .photo-frame img {
       width: 100%;
-      height: 320px;
+      height: 315px;
       object-fit: cover;
     }
 
     .photo-caption {
-      margin: 0.7rem 0 0;
+      margin: 0.65rem 0 0;
       color: var(--muted);
       font-size: 0.94rem;
       text-align: center;
     }
 
-   .gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 0.8rem;
-  margin-top: 1rem;
-}
+    .people-card {
+      padding: 1.5rem;
+    }
 
-.gallery-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.65rem;
+      margin-top: 0.8rem;
+    }
 
-.gallery-item img {
-  width: 100%;
-  max-width: 200px;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 18px;
-  border: 1px solid rgba(29, 27, 26, 0.08);
-  background: #efe7dc;
-}
+    .gallery-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.25rem;
+    }
 
-.gallery-caption {
-  font-size: 0.85rem;
-  color: var(--muted);
-  text-align: center;
-  margin-top: 0.4rem;
-  max-width: 200px;
-}
+    .gallery-item img {
+      width: 100%;
+      max-width: 180px;
+      height: 155px;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 16px;
+      border: 1px solid rgba(29, 27, 26, 0.08);
+      background: #efe7dc;
+    }
+
+    .gallery-caption {
+      font-size: 0.78rem;
+      line-height: 1.25;
+      color: var(--muted);
+      text-align: center;
+      margin: 0;
+      max-width: 180px;
     }
 
     .cta-card {
       display: flex;
       flex-direction: column;
       justify-content: center;
-      min-height: 100%;
+      align-self: center;
+      padding: 1.45rem;
+      height: fit-content;
+      min-height: 0;
+      text-align: center;
+    }
+
+    .cta-card h2 {
+      font-size: clamp(1.9rem, 3vw, 2.65rem);
     }
 
     .cta-copy {
-      max-width: 34rem;
+      max-width: 32rem;
       margin-left: auto;
       margin-right: auto;
       text-align: center;
+      font-size: 0.98rem;
+      line-height: 1.55;
     }
 
     .cta-button-wrap {
       display: flex;
       justify-content: center;
-      margin-top: 1rem;
+      margin-top: 0.75rem;
     }
 
     .cta {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 0.95rem 1.3rem;
+      padding: 0.85rem 1.25rem;
       border-radius: 999px;
       background: var(--accent);
       color: white;
@@ -260,9 +285,7 @@
       transition: transform 0.18s ease;
     }
 
-    .cta:hover {
-      transform: translateY(-1px);
-    }
+    .cta:hover { transform: translateY(-1px); }
 
     .footer {
       padding: 2rem 0 3rem;
@@ -281,8 +304,17 @@
 
     @media (max-width: 900px) {
       .two-col,
-      .gallery-grid {
+      .bottom-two-col {
         grid-template-columns: 1fr;
+      }
+
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .gallery-item img {
+        max-width: 220px;
+        height: 180px;
       }
 
       .photo-wrap {
@@ -299,9 +331,19 @@
       .nav-links {
         gap: 0.85rem;
       }
+
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-item img {
+        max-width: 260px;
+        height: 190px;
+      }
     }
   </style>
 </head>
+
 <body>
   <header class="site-header">
     <div class="container nav">
@@ -309,6 +351,7 @@
         <span class="brand-kicker">Speaking of Play</span>
         <a class="brand-name" href="index.html">Lisa Forbes</a>
       </div>
+
       <nav class="nav-links">
         <a href="index.html">Home</a>
         <a href="pedagogy.html">For Colleges & Organizations</a>
@@ -324,10 +367,9 @@
       <div class="container">
         <div class="hero-box">
           <span class="eyebrow">For colleges and organizations</span>
-          <h1>Design for connection, not just content.</h1>
-             <h1>Because where play lives, learning deepens.</h1>
-          <p>I work with faculty, leaders, and organizations to rethink teaching and learning through the lens of play. Not as a gimmick or set of cute activities and not as a way to make rigid systems slightly more tolerable.</p>
-          <p>This work is about looking at the ways our current practices might be limiting us from achieving the very things we say we want. Play changes the foundation of a classroom and inspires curiosity, belonging, risk-taking, and real engagement.</p>
+          <h1>Design for connection, not just content, because where play lives, learning deepens.</h1>
+          <p>I work with faculty, leaders, and organizations to rethink teaching and learning through the lens of play. Not as a gimmick, not as a set of cute activities, and not as a way to make rigid systems slightly more tolerable.</p>
+          <p>This work is about bringing curiosity, belonging, risk-taking, and real engagement back into learning spaces so people can do more than perform learning. They can actually experience it.</p>
         </div>
       </div>
     </section>
@@ -336,61 +378,62 @@
       <div class="container two-col">
         <div class="card">
           <h2>What I offer</h2>
-          <p>My keynotes and workshops help people reconnect with what makes learning feel human, alive, and meaningful.</p>
+          <p>My talks and workshops help people loosen the grip of over-structure and reconnect with what makes learning feel human, alive, and meaningful.</p>
 
           <div class="list">
             <div class="list-item">Keynotes that challenge how we think about teaching and learning</div>
-            <div class="list-item">Workshops that are experiential, playful, and inspire playful action</div>
-            <div class="list-item">Faculty development centered on reflection, encouragement, and permission to be human.</div>
-            <div class="list-item">Sessions spark new ways of being and new ways of thinking about designing learning</div>
-            <div class="list-item">The power of play in learning and seeing classrooms as a Living System</div>
-            <div class="list-item">Playful Pedagogy as a stance and philosophy that ignites belonging, engagement, and learning</div>
-            <div class="list-item">Jumpstarting creativity and learning to design playful interventions</div>
+            <div class="list-item">Workshops that are experiential, playful, and grounded in research</div>
+            <div class="list-item">Faculty development centered on curiosity, connection, and flexibility</div>
+            <div class="list-item">Sessions that help people imagine different ways of designing learning spaces</div>
+            <div class="list-item">The Power of Play in Learning</div>
+            <div class="list-item">The Classroom as a Living System</div>
+            <div class="list-item">Playful Pedagogy: Igniting Belonging, Engagement, and Learning</div>
+            <div class="list-item">Designing Playful Interventions</div>
           </div>
         </div>
 
         <div class="card">
-          <h2>Beyond techniqiues, into humanness</h2>
-          <p>Play is not just about engagement strategies and it's not simply fun and games. I’m interested in the deeper question of what kind of classroom culture, or learning space we are creating in the first place.</p>
-          <p>Because the climate we create can either stifle, silence, disengage, or it can invite experimentation, connection, belonging, and possibility.</p>
+          <h2>What makes this different</h2>
+          <p>I’m not just talking about engagement strategies. I’m interested in the deeper question of what kind of classroom, culture, or learning space we are creating in the first place.</p>
+          <p>Play shifts the energy of the room. It invites more honesty, more experimentation, more connection, and more possibility. That shift changes what learning can become.</p>
 
           <div class="photo-wrap">
             <div class="photo-frame">
-              <img src="/speakingofplay/site-images/stuart-brown.jpg" alt="Lisa Forbes with Stuart Brown" />
+              <img src="/speakingofplay/stuart-brown-new.jpg" alt="Lisa Forbes with Stuart Brown" />
             </div>
-            <p class="photo-caption">Stuart Brown and me at the 2025 Playposium! Check out his book: Play: How it Shapes the Brain, Opens the Imagination, and Invigorates the Soul.</p>
+            <p class="photo-caption">Stuart Brown and me at the 2025 Playposium!</p>
           </div>
+        </div>
+      </div>
     </section>
 
     <section class="content-section">
-      <div class="container two-col">
-        <div class="card">
+      <div class="container bottom-two-col">
+        <div class="card people-card">
           <h2>Playful People</h2>
           <p>A few glimpses of the energy and people of play.</p>
 
           <div class="gallery-grid">
-  
-  <div class="gallery-item">
-    <img src="/speakingofplay/site-images/playposium-audience.jpg" alt="Playposium participants" />
-    <p class="gallery-caption">Playposium participants</p>
-  </div>
+            <div class="gallery-item">
+              <img src="/speakingofplay/site-images/playposium-audience.jpg" alt="Playposium participants" />
+              <p class="gallery-caption">Playposium participants</p>
+            </div>
 
-  <div class="gallery-item">
-    <img src="/speakingofplay/site-images/gary-lisa.jpg" alt="Me with Gary Ware" />
-    <p class="gallery-caption">Me with Gary Ware — Playful Rebellion author</p>
-  </div>
+            <div class="gallery-item">
+              <img src="/speakingofplay/site-images/gary-lisa.jpg" alt="Lisa Forbes with Gary Ware" />
+              <p class="gallery-caption">Me with Gary Ware, Playful Rebellion author</p>
+            </div>
 
-  <div class="gallery-item">
-    <img src="/speakingofplay/site-images/stuart-family.jpg" alt="With Stuart Brown" />
-    <p class="gallery-caption">Me with Stuart, Lauren, and Mia</p>
-  </div>
+            <div class="gallery-item">
+              <img src="/speakingofplay/stuart-family.jpg" alt="Lisa Forbes with Stuart, Lauren, and Mia" />
+              <p class="gallery-caption">Me with Stuart, Lauren, and Mia</p>
+            </div>
 
-  <div class="gallery-item">
-    <img src="/speakingofplay/site-images/balloons.jpg" alt="Lisa Forbes" />
-    <p class="gallery-caption">The energy via balloons</p>
-  </div>
-
-</div>
+            <div class="gallery-item">
+              <img src="/speakingofplay/site-images/balloons.jpg" alt="The energy via balloons" />
+              <p class="gallery-caption">The energy via balloons</p>
+            </div>
+          </div>
         </div>
 
         <div class="card cta-card">
