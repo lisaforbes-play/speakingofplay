@@ -369,6 +369,67 @@
         gap: 0.85rem;
       }
     }
+    .featured-book {
+  display: grid;
+  grid-template-columns: 170px 1fr;
+  gap: 1.2rem;
+  align-items: center;
+  background: rgba(255, 248, 238, 0.95);
+  border: 1px solid rgba(217, 108, 74, 0.25);
+  border-radius: 24px;
+  padding: 1.1rem;
+  margin: 1.5rem 0;
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.07);
+}
+
+.featured-book img {
+  width: 170px;
+  border-radius: 14px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.16);
+}
+
+.featured-book-text h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.7rem;
+  line-height: 1.1;
+  margin: 0.4rem 0;
+}
+
+.featured-book-text p {
+  margin: 0 0 0.9rem;
+}
+
+.featured-badge {
+  display: inline-block;
+  background: #d96c4a;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.35rem 0.6rem;
+  border-radius: 999px;
+}
+
+.featured-button {
+  display: inline-flex;
+  background: #1d5f73;
+  color: white;
+  padding: 0.75rem 1rem;
+  border-radius: 999px;
+  font-weight: 700;
+}
+
+@media (max-width: 700px) {
+  .featured-book {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .featured-book img {
+    margin: 0 auto;
+  }
+}
   </style>
 </head>
 <body>
@@ -459,6 +520,21 @@
 
           <p>My work lives at the intersection of teaching, therapy, and a healthy dose of rebellion. I bringing together research, lived experience, and embodied practice in ways that help people feel more alive in their teaching or therapy practices.</p>
            <p>Through keynotes, workshops, trainings, and consultation, I am interested in helping educators, clinicians, and organizations create the conditions for greater connection, engagement, learning, and aliveness.</p>
+
+          <div class="featured-book">
+  <a href="https://playstorypress.org/books/play-and-the-hearts-refusal-to-harden/" target="_blank" rel="noopener">
+    <img src="site-images/heart-refusal-cover.png" alt="Play and the Heart's Refusal to Harden book cover" />
+  </a>
+
+  <div class="featured-book-text">
+    <span class="featured-badge">New Book</span>
+    <h3>Play and the Heart’s Refusal to Harden</h3>
+    <p>Play is what the heart does when it refuses to harden.</p>
+    <a class="featured-button" href="https://playstorypress.org/books/play-and-the-hearts-refusal-to-harden/" target="_blank" rel="noopener">
+      Learn more →
+    </a>
+  </div>
+</div>
 
           <p class="work-intro">Want to poke around a little? Here are a few books, articles, and projects that say more about my work.</p>
 
