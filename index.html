@@ -475,10 +475,31 @@
     );
 }
     .comparison-blurb:first-child {
-  border: 2px solid #d96c4a;
+  border: 1px solid rgba(43,111,132,0.15);
 }
     .comparison-blurb:last-child {
   border: 2px solid #2b6f84;
+}
+  .comparison-heading {
+  display: inline-block;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.comparison-heading.education {
+  background: rgba(217,108,74,0.12);
+  color: #d96c4a;
+}
+
+.comparison-heading.therapy {
+  background: rgba(43,111,132,0.12);
+  color: #2b6f84;
+}
 }
   </style>
 </head>
@@ -513,9 +534,11 @@
           <h2>Same word. Different work.</h2>
           <div class="comparison-grid">
             <div class="comparison-blurb">
+                <h3 class="comparison-heading education">Education</h3>
               <p>In educational settings, I focus on how play rehumanizes learning, reduces barriers to learning and invites curiosity, risk-taking, and connection back into the room.</p>
             </div>
             <div class="comparison-blurb">
+                <h3 class="comparison-heading therapy">Therapy</h3>
               <p>In clinical settings, I see play as the primary language through which children express, process, and make sense of their internal worlds. Becoming fluent in the language of play creates a powerful presence in a child's healing process.</p>
             </div>
           </div>
