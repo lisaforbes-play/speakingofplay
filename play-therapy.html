@@ -218,20 +218,23 @@
       padding: 1.45rem;
     }
 
-    .therapy-gallery {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1rem;
-      margin-top: 1rem;
-    }
+  .therapy-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
 
-    .therapy-gallery-item {
-      border-radius: 20px;
-      overflow: hidden;
-      background: #efe7dc;
-      border: 1px solid rgba(29, 27, 26, 0.08);
-      width: 100%;
-    }
+ .therapy-gallery-item {
+    border-radius: 20px;
+    overflow: hidden;
+    background: #efe7dc;
+    border: 1px solid rgba(29, 27, 26, 0.08);
+
+    width: fit-content;
+    margin: 0 auto;
+}
 
 .therapy-gallery-item img {
   width: 100%;
