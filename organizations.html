@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Lisa Forbes | Play in Adult Life & Organizations</title>
+
+  <meta
+    name="description"
+    content="Keynotes, workshops, and organizational programs from Lisa Forbes about play in adulthood, creativity, connection, culture, social norms, wellbeing, and the refusal to harden."
+  />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+
+:root {
+  --bg: #f6f1ea;
+  --paper: rgba(255, 253, 249, 0.92);
+  --ink: #1d1b1a;
+  --muted: #5e5853;
+  --coral: #d96c4a;
+  --coral-soft: rgba(217, 108, 74, 0.12);
+  --gold: #b48732;
+  --gold-soft: rgba(180, 135, 50, 0.13);
+  --teal: #2b6f84;
+  --teal-soft: rgba(43, 111, 132, 0.12);
+  --lavender: #8f6bab;
+  --lavender-soft: rgba(143, 107, 171, 0.12);
+  --shadow: 0 16px 50px rgba(0, 0, 0, 0.08);
+  --max: 1180px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: "Inter", system-ui, sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at top left, rgba(180, 135, 50, 0.09), transparent 30%),
+    radial-gradient(circle at top right, rgba(217, 108, 74, 0.08), transparent 34%),
+    var(--bg);
+  line-height: 1.65;
+}
+
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
+
+.container {
+  width: min(var(--max), calc(100% - 2rem));
+  margin: 0 auto;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  backdrop-filter: blur(14px);
+  background: rgba(246, 241, 234, 0.88);
+  border-bottom: 1px solid rgba(29, 27, 26, 0.08);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  flex-shrink: 0;
+}
+
+.brand-kicker {
+  font-size: 0.76rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.brand-name {
+  font-family: "Playfair Display", serif;
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1rem;
+  flex-wrap: wrap;
+  font-size: 0.91rem;
+  color: var(--muted);
+}
+
+.nav-links a:hover { color: var(--coral); }
+
+section { padding: 1.2rem 0 2rem; }
+
+.card,
+.hero-card,
+.cta-card {
+  background: var(--paper);
+  border: 1px solid rgba(29, 27, 26, 0.08);
+  border-radius: 32px;
+  box-shadow: var(--shadow);
+  padding: 1.7rem;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  line-height: 1.05;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Playfair Display", serif;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 5vw, 4.6rem);
+  letter-spacing: -0.04em;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  letter-spacing: -0.03em;
+  margin-bottom: 0.8rem;
+}
+
+h3 {
+  font-size: 1.55rem;
+  margin-bottom: 0.6rem;
+}
+
+p {
+  margin: 0 0 1rem;
+  color: var(--muted);
+  font-size: 1.03rem;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.45rem 0.85rem;
+  border-radius: 999px;
+  background: var(--gold-soft);
+  color: #7e5d1d;
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.eyebrow::before {
+  content: "";
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 999px;
+  background: var(--gold);
+  display: block;
+}
+
+.hero-card {
+  background: #fffdfa;
+  border: 3px solid rgba(180, 135, 50, 0.45);
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.topic-card {
+  background: rgba(255, 253, 249, 0.9);
+  border: 2px solid rgba(180, 135, 50, 0.45);
+  border-radius: 22px;
+  padding: 1.25rem;
+}
+
+.topic-card:nth-child(2n) {
+  border-color: rgba(43, 111, 132, 0.45);
+}
+
+.topic-card:nth-child(3n) {
+  border-color: rgba(217, 108, 74, 0.45);
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.9rem 1.2rem;
+  border-radius: 999px;
+  background: var(--gold);
+  color: white;
+  font-weight: 700;
+}
+
+.cta-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  background: linear-gradient(135deg, rgba(29, 27, 26, 0.96), rgba(53, 50, 47, 0.96));
+  color: white;
+}
+
+.cta-card p {
+  color: rgba(255, 255, 255, 0.78);
+  max-width: 44rem;
+}
+
+.site-footer {
+  padding: 0 0 3rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.footer-inner {
+  border-top: 1px solid rgba(29, 27, 26, 0.08);
+  padding-top: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 960px) {
+  .grid-2,
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    gap: 0.8rem;
+  }
+}
+
+  </style>
+</head>
+
+<body>
+
+<header class="site-header">
+  <div class="container nav">
+    <div class="brand">
+      <span class="brand-kicker">Speaking of Play</span>
+      <a class="brand-name" href="index.html">Lisa Forbes</a>
+    </div>
+
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="pedagogy.html">Education</a>
+      <a href="organizations.html">Organizations</a>
+      <a href="play-therapy.html">Play Therapy</a>
+      <a href="previous-work.html">Previous Work</a>
+      <a href="blog.html">Field Journal</a>
+      <a href="mailto:lisakosena@gmail.com">Contact</a>
+    </nav>
+  </div>
+</header>
+
+
+  <main>
+    <section>
+      <div class="container">
+        <div class="hero-card">
+          <span class="eyebrow">For organizations, conferences, leaders, and communities</span>
+
+          <h1>Play is not just for children. It is one way adults stay human.</h1>
+
+          <p>
+            I work with organizations, conferences, leaders, and communities
+            to explore how play creates the conditions for creativity,
+            connection, courage, and meaningful change.
+          </p>
+
+          <p>
+            This work is not about making everything fun. It is about noticing
+            the norms, habits, pressures, and systems that cause people to become
+            rigid, disconnected, or afraid to experiment—and considering what
+            becomes possible when play is welcomed back in.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="card">
+          <h2>What this work explores</h2>
+
+          <div class="grid-3">
+            <div class="topic-card">
+              <h3>The refusal to harden</h3>
+              <p>
+                How small acts of play, delight, imagination, and curiosity help
+                people remain emotionally alive amid stress, grief, responsibility,
+                and pressure.
+              </p>
+            </div>
+
+            <div class="topic-card">
+              <h3>Creativity and experimentation</h3>
+              <p>
+                How play loosens perfectionism, makes room for risk, and helps
+                people test ideas without needing certainty before they begin.
+              </p>
+            </div>
+
+            <div class="topic-card">
+              <h3>Culture and social norms</h3>
+              <p>
+                How invisible rules shape behavior, belonging, permission,
+                conformity, and what people believe they are allowed to do.
+              </p>
+            </div>
+
+            <div class="topic-card">
+              <h3>Connection and psychological safety</h3>
+              <p>
+                How playful conditions can reduce hierarchy, invite authenticity,
+                and create more human ways of being together.
+              </p>
+            </div>
+
+            <div class="topic-card">
+              <h3>Burnout and aliveness</h3>
+              <p>
+                How organizations can move beyond surface-level wellness and
+                examine the conditions that cause people to become depleted,
+                disconnected, or hardened.
+              </p>
+            </div>
+
+            <div class="topic-card">
+              <h3>Playful rebellion</h3>
+              <p>
+                How questioning rigid expectations and inherited rules can open
+                possibilities for courage, imagination, and cultural change.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container grid-2">
+        <div class="card">
+          <h2>Possible formats</h2>
+
+          <p>
+            I tailor this work for conferences, leadership gatherings,
+            professional associations, nonprofits, community groups,
+            businesses, and organizations.
+          </p>
+
+          <div class="grid-2">
+            <div class="topic-card">
+              <h3>Keynotes</h3>
+              <p>Thought-provoking talks that connect play to adult life, culture, work, and humanity.</p>
+            </div>
+
+            <div class="topic-card">
+              <h3>Workshops</h3>
+              <p>Experiential sessions that help groups notice norms, experiment, connect, and imagine differently.</p>
+            </div>
+
+            <div class="topic-card">
+              <h3>Leadership sessions</h3>
+              <p>Programs focused on culture, permission, psychological safety, curiosity, and the conditions people need to thrive.</p>
+            </div>
+
+            <div class="topic-card">
+              <h3>Community conversations</h3>
+              <p>Facilitated experiences about adulthood, responsibility, belonging, social expectations, and staying alive to possibility.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2>Sample topics</h2>
+
+          <div class="topic-card">
+            <h3>Play and the Heart’s Refusal to Harden</h3>
+            <p>
+              Play as a way of resisting emotional hardening under stress,
+              grief, responsibility, and the demands of adulthood.
+            </p>
+          </div>
+
+          <div class="topic-card" style="margin-top: 1rem;">
+            <h3>The Invisible Rules We Live By</h3>
+            <p>
+              A playful examination of social norms, conformity, permission,
+              and the rules that shape how people behave together.
+            </p>
+          </div>
+
+          <div class="topic-card" style="margin-top: 1rem;">
+            <h3>Playful Rebellion</h3>
+            <p>
+              How curiosity, experimentation, and small acts of nonconformity
+              create movement in rigid systems.
+            </p>
+          </div>
+
+          <div class="topic-card" style="margin-top: 1rem;">
+            <h3>Creating Conditions for Aliveness</h3>
+            <p>
+              Moving beyond engagement tricks to consider the cultures,
+              relationships, and conditions that help people feel connected,
+              courageous, and fully present.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="cta-card">
+          <div>
+            <h2>Invite this conversation into your organization.</h2>
+
+            <p>
+              I can tailor a keynote, workshop, leadership session, or community
+              conversation for your audience and context.
+            </p>
+          </div>
+
+          <a class="button" href="mailto:lisakosena@gmail.com">
+            Start a conversation
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>© Lisa Forbes</div>
+      <div>Speaking of Play</div>
+    </div>
+  </footer>
+</body>
+</html>
