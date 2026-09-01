@@ -361,31 +361,22 @@
     .hero-name {
       font-size:
         clamp(
-          2.25rem,
-          4.2vw,
-          3.75rem
+          2rem,
+          3.1vw,
+          2.85rem
         );
 
       letter-spacing: -.045em;
 
-      margin-bottom: .65rem;
+      margin-bottom: 1rem;
+
+      white-space: nowrap;
     }
 
 
-    .identity {
-      font-size:
-        clamp(
-          1rem,
-          1.8vw,
-          1.2rem
-        );
-
-      font-weight: 700;
-
-      color: var(--teal);
-
-      margin:
-        .25rem 0 1.2rem;
+    .hero-main .eyebrow {
+      margin-bottom: 1.2rem;
+      align-self: flex-start;
     }
 
 
@@ -701,6 +692,16 @@
        BOOK
     -------------------------- */
 
+    .book-wrap {
+      width: min(
+        1000px,
+        calc(100% - 2rem)
+      );
+
+      margin: 0 auto;
+    }
+
+
     .book {
       display: grid;
 
@@ -945,10 +946,12 @@
       .hero-name {
         font-size:
           clamp(
-            2rem,
-            10vw,
-            3rem
+            1.8rem,
+            8.5vw,
+            2.6rem
           );
+
+        white-space: normal;
       }
 
     }
@@ -1030,19 +1033,14 @@
 
         <div class="hero-card hero-main">
 
-          <span class="eyebrow">
-            Speaker • Author • Play Therapist • Educator
-          </span>
-
-
           <h1 class="hero-name">
             Lisa K. Forbes, PhD, LPC, RPT-S™
           </h1>
 
 
-          <div class="identity">
-            Speaker, Author, Play Therapist & Educator
-          </div>
+          <span class="eyebrow">
+            Speaker • Author • Play Therapist • Educator
+          </span>
 
 
           <div class="positioning">
@@ -1299,7 +1297,7 @@
 
     <section>
 
-      <div class="container">
+      <div class="book-wrap">
 
         <div class="card book">
 
