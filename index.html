@@ -380,23 +380,43 @@
     }
 
 
-    .positioning {
-      font-family:
-        "Playfair Display",
-        serif;
+  .positioning {
+  font-family:
+    "Playfair Display",
+    serif;
 
-      font-size:
-        clamp(
-          1.3rem,
-          2.2vw,
-          1.8rem
-        );
+  font-size:
+    clamp(
+      1.35rem,
+      2.25vw,
+      1.85rem
+    );
 
-      line-height: 1.28;
+  line-height: 1.32;
 
-      margin:
-        .5rem 0 0;
-    }
+  max-width: 950px;
+
+  margin:
+    2rem 0 0;
+}
+
+
+.hero-context {
+  margin-top: 1.8rem;
+
+  padding-top: 1.4rem;
+
+  border-top:
+    1px solid rgba(29, 27, 26, .10);
+
+  font-size: .95rem;
+
+  font-weight: 600;
+
+  letter-spacing: .04em;
+
+  color: var(--teal);
+}
 
 
     .hero-side h2 {
@@ -604,35 +624,36 @@
        ABOUT
     -------------------------- */
 
-    .about-grid {
-      display: grid;
+   .about-grid {
+  display: grid;
 
-      grid-template-columns:
-        340px 1fr;
+  grid-template-columns:
+    340px 1fr;
 
-      gap: 1.2rem;
+  gap: 1.2rem;
 
-      align-items: start;
-    }
-
-
-    .about-photo-card {
-      padding: 1rem;
-
-      align-self: start;
-    }
+  align-items: stretch;
+}
 
 
-    .about-photo-card img {
-      width: 100%;
+.about-photo-card {
+  padding: 1rem;
 
-      max-height: 435px;
+  height: 100%;
+}
 
-      object-fit: cover;
 
-      object-position: center top;
+.about-photo-card img {
+  width: 100%;
+  height: 100%;
 
-      border-radius: 22px;
+  min-height: 500px;
+
+  object-fit: cover;
+
+  object-position: center top;
+
+  border-radius: 22px;
     }
 
 
@@ -1043,13 +1064,18 @@
           </span>
 
 
-          <div class="positioning">
+         <div class="positioning">
 
-            I explore how play helps children tell their stories,
-            adults resist hardening, and people and systems become
-            more alive, connected, and open to possibility.
+  I explore what becomes possible when play is taken seriously:
+  how it helps us tell our stories, resist hardening, reimagine
+  learning and work, deepen connection, and stay open to curiosity,
+  wonder, and possibility.
 
-          </div>
+</div>
+
+<div class="hero-context">
+  Across therapy, education, organizations, adult life, and culture.
+</div>
 
         </div>
 
@@ -1220,11 +1246,6 @@
 
 
         <div class="card about-copy">
-
-          <div class="small">
-            About Lisa
-          </div>
-
 
           <h2>
             Play is the throughline.
