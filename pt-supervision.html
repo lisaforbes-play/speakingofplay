@@ -1,0 +1,683 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>RPT Supervision | Lisa K. Forbes | Speaking of Play</title>
+
+  <meta name="description" content="Individual and group play therapy supervision with Lisa K. Forbes, PhD, LPC, RPT-S. Supervision for clinicians pursuing Registered Play Therapist (RPT) credentialing.">
+
+  <link rel="canonical" href="https://speakingofplay.org/rpt-supervision.html">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+
+    :root {
+      --bg: #f6f1ea;
+      --paper: #fffdfa;
+      --ink: #1d1b1a;
+      --muted: #5e5853;
+      --coral: #d96c4a;
+      --teal: #2b6f84;
+      --gold: #b48732;
+      --shadow: 0 16px 50px rgba(0,0,0,.08);
+      --max: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, sans-serif;
+      background: #f6f1ea;
+      color: var(--ink);
+      line-height: 1.65;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 2rem));
+      margin: 0 auto;
+    }
+
+    /* NAVIGATION */
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(246,241,234,.95);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(29,27,26,.08);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1rem 0;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-kicker {
+      font-size: .76rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .brand-name {
+      font-family: "Playfair Display", serif;
+      font-size: 1.4rem;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: .9rem;
+      color: var(--muted);
+    }
+
+    .nav-links a:hover {
+      color: var(--coral);
+    }
+
+    /* GENERAL */
+
+    section {
+      padding: 1.4rem 0;
+    }
+
+    h1, h2, h3 {
+      font-family: "Playfair Display", serif;
+      line-height: 1.12;
+      margin: 0 0 1rem;
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 5vw, 4.3rem);
+    }
+
+    h2 {
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+    }
+
+    h3 {
+      font-size: 1.5rem;
+    }
+
+    p {
+      color: var(--muted);
+      margin: 0 0 1rem;
+    }
+
+    .lead {
+      font-size: 1.15rem;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      background: rgba(217,108,74,.13);
+      padding: .5rem .9rem;
+      border-radius: 999px;
+      font-size: .8rem;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+      margin-bottom: 1.2rem;
+    }
+
+    .small {
+      font-size: .78rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 700;
+      margin-bottom: .7rem;
+    }
+
+    .card, .hero, .cta {
+      background: var(--paper);
+      border-radius: 30px;
+      padding: 2rem;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(29,27,26,.08);
+    }
+
+    .hero {
+      border: 3px solid rgba(43,111,132,.35);
+    }
+
+    .grid2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 1.2rem;
+    }
+
+    .grid3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 1rem;
+    }
+
+    /* SUPERVISION OPTIONS */
+
+    .supervision-card {
+      padding: 1.7rem;
+      border-radius: 26px;
+      background: var(--paper);
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .individual {
+      border: 3px solid var(--teal);
+    }
+
+    .group {
+      border: 3px solid var(--coral);
+    }
+
+    .supervision-card p {
+      flex-grow: 1;
+    }
+
+    .feature {
+      padding: 1rem;
+      border-radius: 18px;
+      background: #f6f1ea;
+      margin-top: .7rem;
+      color: var(--muted);
+    }
+
+    .price-note {
+      margin-top: 1rem;
+      font-weight: 700;
+      color: var(--teal);
+    }
+
+    /* BUTTONS */
+
+    .button {
+      display: inline-block;
+      padding: .8rem 1.2rem;
+      border-radius: 999px;
+      font-weight: 700;
+      margin-top: 1rem;
+      color: white;
+      text-align: center;
+    }
+
+    .button.teal {
+      background: var(--teal);
+    }
+
+    .button.coral {
+      background: var(--coral);
+    }
+
+    /* PHILOSOPHY */
+
+    .philosophy {
+      border-left: 6px solid var(--coral);
+    }
+
+    .principle {
+      background: #f5eee6;
+      border-radius: 20px;
+      padding: 1.3rem;
+    }
+
+    .principle:nth-child(2) {
+      background: #e8f1f2;
+    }
+
+    .principle:nth-child(3) {
+      background: #f7eadc;
+    }
+
+    /* CTA */
+
+    .cta {
+      background: linear-gradient(135deg, #1d1b1a, #35312e);
+      color: white;
+      text-align: center;
+    }
+
+    .cta p {
+      color: rgba(255,255,255,.8);
+    }
+
+    /* FOOTER */
+
+    .footer {
+      padding: 2rem 0 3rem;
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    .footer-inner {
+      border-top: 1px solid rgba(29,27,26,.1);
+      padding-top: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 900px) {
+
+      .grid2, .grid3 {
+        grid-template-columns: 1fr;
+      }
+
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+
+  <header class="site-header">
+    <div class="container nav">
+
+      <div class="brand">
+        <span class="brand-kicker">Speaking of Play</span>
+        <a class="brand-name" href="index.html">Lisa K. Forbes</a>
+      </div>
+
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="speaking-training.html">Speaking & Training</a>
+        <a href="narrative-child-centered-play-therapy.html">Narrative Play Therapy</a>
+        <a href="play-and-the-hearts-refusal-to-harden.html">Play & the Refusal to Harden</a>
+        <a href="about.html">About</a>
+        <a href="mailto:lisakosena@gmail.com">Contact</a>
+      </nav>
+
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+
+    <section>
+      <div class="container">
+
+        <div class="hero">
+
+          <span class="eyebrow">
+            Play Therapy Supervision
+          </span>
+
+          <h1>
+            RPT Credentialing Supervision
+          </h1>
+
+          <p class="lead">
+            Individual and group supervision for mental health
+            professionals working toward their Registered Play
+            Therapist (RPT) credential.
+          </p>
+
+          <p>
+            I'm Lisa K. Forbes, PhD, LPC, RPT-S, and I offer
+            reflective, relationship-centered supervision
+            grounded in child-centered play therapy,
+            narrative thinking, and a deep respect for
+            children's ways of communicating through play.
+          </p>
+
+          <a
+            class="button teal"
+            href="mailto:lisakosena@gmail.com?subject=RPT%20Supervision%20Inquiry"
+          >
+            Ask About Supervision
+          </a>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- INDIVIDUAL AND GROUP -->
+
+    <section>
+      <div class="container">
+
+        <div class="grid2">
+
+          <div class="supervision-card individual">
+
+            <div class="small">
+              One-on-One Support
+            </div>
+
+            <h2>
+              Individual Supervision
+            </h2>
+
+            <p>
+              A dedicated space to explore your clinical work,
+              develop your theoretical orientation, deepen your
+              understanding of the play therapy process, and
+              strengthen your confidence as a play therapist.
+            </p>
+
+            <div class="feature">
+              Personalized case consultation and reflection
+            </div>
+
+            <div class="feature">
+              Exploration of clinical decision-making
+            </div>
+
+            <div class="feature">
+              Support integrating theory into practice
+            </div>
+
+            <div class="feature">
+              Attention to your development and identity as a play therapist
+            </div>
+
+            <a
+              class="button teal"
+              href="mailto:lisakosena@gmail.com?subject=Individual%20RPT%20Supervision"
+            >
+              Inquire About Individual Supervision
+            </a>
+
+          </div>
+
+
+          <div class="supervision-card group">
+
+            <div class="small">
+              Learn Alongside Other Clinicians
+            </div>
+
+            <h2>
+              Group Supervision
+            </h2>
+
+            <p>
+              A collaborative and supportive space where play
+              therapists can explore cases, share perspectives,
+              learn from one another, and develop their clinical
+              skills together.
+            </p>
+
+            <div class="feature">
+              Small-group discussion and case exploration
+            </div>
+
+            <div class="feature">
+              Opportunities to learn from multiple perspectives
+            </div>
+
+            <div class="feature">
+              Connection with other clinicians pursuing RPT credentialing
+            </div>
+
+            <div class="feature">
+              Reflective, theory-informed supervision
+            </div>
+
+            <div class="price-note">
+              Offered at a lower per-person rate than individual supervision.
+            </div>
+
+            <a
+              class="button coral"
+              href="mailto:lisakosena@gmail.com?subject=Group%20RPT%20Supervision"
+            >
+              Inquire About Group Supervision
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- SUPERVISION PHILOSOPHY -->
+
+    <section>
+      <div class="container">
+
+        <div class="card philosophy">
+
+          <div class="small">
+            My Approach to Supervision
+          </div>
+
+          <h2>
+            Supervision should be a place to grow, not perform.
+          </h2>
+
+          <p class="lead">
+            I believe supervision is most meaningful when
+            clinicians feel supported enough to be curious,
+            honest, reflective, and willing to explore
+            the places where they feel uncertain.
+          </p>
+
+          <p>
+            My supervision approach is grounded in
+            Child-Centered Play Therapy and informed by
+            a narrative lens. I'm interested in helping
+            clinicians notice what is happening in the
+            child's play, understand the unfolding
+            therapeutic process, and develop greater
+            intentionality without becoming unnecessarily
+            directive.
+          </p>
+
+          <p>
+            We'll explore not only what you do in the
+            playroom, but what you're noticing, wondering,
+            feeling, and learning as a therapist.
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- WHAT WE EXPLORE -->
+
+    <section>
+      <div class="container">
+
+        <div class="grid3">
+
+          <div class="principle">
+
+            <h3>
+              Clinical Confidence
+            </h3>
+
+            <p>
+              Strengthen your ability to recognize
+              therapeutic movement, respond to challenges,
+              and trust the process without feeling
+              pressure to force change.
+            </p>
+
+          </div>
+
+
+          <div class="principle">
+
+            <h3>
+              Theoretical Depth
+            </h3>
+
+            <p>
+              Move beyond simply knowing play therapy
+              techniques toward understanding the theory,
+              relationships, and mechanisms that inform
+              your clinical choices.
+            </p>
+
+          </div>
+
+
+          <div class="principle">
+
+            <h3>
+              Reflective Practice
+            </h3>
+
+            <p>
+              Explore your own responses, assumptions,
+              strengths, and growing edges with curiosity
+              rather than judgment.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- CREDENTIALING INFORMATION -->
+
+    <section>
+      <div class="container">
+
+        <div class="card">
+
+          <div class="small">
+            Working Toward Your RPT
+          </div>
+
+          <h2>
+            Supervision for Registered Play Therapist Credentialing
+          </h2>
+
+          <p>
+            The Registered Play Therapist (RPT) credential
+            is awarded by the Association for Play Therapy
+            (APT). Applicants must meet APT's education,
+            clinical experience, training, and supervision
+            requirements.
+          </p>
+
+          <p>
+            As a Registered Play Therapist Supervisor
+            (RPT-S), I offer supervision intended to
+            support clinicians pursuing this credential.
+            Individual and group supervision hours are
+            subject to APT's current requirements and
+            eligibility rules.
+          </p>
+
+          <p>
+            Before beginning, we'll discuss your current
+            credentialing progress and the type of
+            supervision that best fits your needs.
+          </p>
+
+          <a
+            class="button teal"
+            href="https://www.a4pt.org/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Visit the Association for Play Therapy
+          </a>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- FINAL CTA -->
+
+    <section>
+      <div class="container">
+
+        <div class="cta">
+
+          <h2>
+            Looking for an RPT-S Supervisor?
+          </h2>
+
+          <p class="lead">
+            Whether you're just beginning your RPT journey
+            or looking for supervision to complete your
+            credentialing requirements, I'd love to hear
+            more about your goals.
+          </p>
+
+          <a
+            class="button coral"
+            href="mailto:lisakosena@gmail.com?subject=RPT%20Supervision%20Inquiry"
+          >
+            Contact Lisa About Supervision
+          </a>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+
+  <footer class="footer">
+
+    <div class="container footer-inner">
+
+      <div>
+        © Lisa K. Forbes
+      </div>
+
+      <div>
+        Speaking of Play
+      </div>
+
+    </div>
+
+  </footer>
+
+</body>
+</html>
